@@ -17,11 +17,5 @@ public enum Cuisine {
     EASTERN_EUROPEAN,
     BRAZILIAN,
     OTHER;
-
-//    public final String cuisineType;
-
-//    Cuisine(String cuisineType) {
-//        this.cuisineType = cuisineType;
-//    }
-
+    
 }

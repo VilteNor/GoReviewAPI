@@ -61,7 +61,6 @@ public class Review {
         this.restaurants = restaurants;
     }
 
-
     public String getOptionalMessage() {
         return optionalMessage;
     }
