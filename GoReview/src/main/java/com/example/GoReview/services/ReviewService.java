@@ -1,6 +1,7 @@
 package com.example.GoReview.services;
 
 
+import com.example.GoReview.models.Restaurant;
 import com.example.GoReview.models.Review;
 import com.example.GoReview.repositories.ReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,11 @@ public class ReviewService {
 
 // in restaurant service:
 // getRestaurantByRating(int) : List<Restaurants>
+//    public List<Restaurant> getRestaurantByRating(int rating){
+//        return reviewRepository.findByRating(rating);
+//    }
+
+
 // getRestaurantByFeatures() : List<Restaurant>
 
 
