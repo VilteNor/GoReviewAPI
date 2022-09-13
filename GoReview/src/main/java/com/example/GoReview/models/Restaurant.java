@@ -60,5 +60,9 @@ import java.util.List;
             this.reviews = reviews;
         }
 
+        public void addNewRestaurant() {
+            this.res
+        }
+
     }
 

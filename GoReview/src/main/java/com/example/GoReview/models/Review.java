@@ -30,13 +30,15 @@ public class Review {
     @ManyToOne
     @JoinColumn(name = "restaurant")
     @JsonIgnoreProperties({"reviews"})
+    private Restaurant restaurant;
+
     private List<Restaurant> restaurants;
 
 //    enums pending
 
     public Review(User user, Restaurant restaurant, String dateOfVisit, Rating rating){
         this.user = user;
-        this.restaurants=new ArrayList<>();
+        this.restaurant = restaurant;
         this.dateOfVisit=dateOfVisit;
         this.rating=rating;
         this.optionalMessage="this review does not contain a message";
@@ -96,4 +98,13 @@ public class Review {
     public void addRestaurant(Restaurant restaurant){
         this.restaurants.add(restaurant);
     }
+
+    public Restaurant getRestaurant() {
+        return restaurant;
+    }
+
+    public void setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
+    }
+
 }
