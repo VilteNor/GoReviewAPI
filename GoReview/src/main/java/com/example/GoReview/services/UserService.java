@@ -4,10 +4,12 @@ import com.example.GoReview.models.Reply;
 import com.example.GoReview.models.User;
 import com.example.GoReview.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class UserService {
 
     @Autowired
@@ -34,5 +36,10 @@ public class UserService {
             return new Reply("User created successfully!");
         }
     }
+
+    public void deleteUser(Long id) {
+        userRepository.deleteById(id);
+    }
+
 
 }

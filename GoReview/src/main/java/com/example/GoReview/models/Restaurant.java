@@ -1,6 +1,7 @@
 package com.example.GoReview.models;
 
 import com.example.GoReview.repositories.RestaurantRepository;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.List;
@@ -18,8 +19,8 @@ import java.util.List;
         @Column(name = "location")
         private String location;
 
-        @ManyToOne
-        @JoinColumn(name = "review_id")
+        @OneToMany(mappedBy = "restaurant")
+        @JsonIgnoreProperties({"restaurant"})
         List<Review> reviews;
 
         public Restaurant(long id, String name, String location) {
@@ -60,9 +61,6 @@ import java.util.List;
             this.reviews = reviews;
         }
 
-        public void addNewRestaurant() {
-            this.res
-        }
 
     }
 

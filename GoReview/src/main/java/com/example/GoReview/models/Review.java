@@ -28,11 +28,10 @@ public class Review {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "restaurant")
+    @JoinColumn(name = "restaurant_id")
     @JsonIgnoreProperties({"reviews"})
     private Restaurant restaurant;
 
-    private List<Restaurant> restaurants;
 
 //    enums pending
 
@@ -53,14 +52,6 @@ public class Review {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public List<Restaurant> getRestaurants() {
-        return restaurants;
-    }
-
-    public void setRestaurants(List<Restaurant> restaurants) {
-        this.restaurants = restaurants;
     }
 
     public String getOptionalMessage() {
@@ -93,10 +84,6 @@ public class Review {
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    public void addRestaurant(Restaurant restaurant){
-        this.restaurants.add(restaurant);
     }
 
     public Restaurant getRestaurant() {
