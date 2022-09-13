@@ -23,8 +23,8 @@ import java.util.List;
         @JsonIgnoreProperties({"restaurant"})
         List<Review> reviews;
 
-        public Restaurant(long id, String name, String location) {
-            this.id = id;
+        public Restaurant( String name, String location) {
+
             this.name = name;
             this.location = location;
         }

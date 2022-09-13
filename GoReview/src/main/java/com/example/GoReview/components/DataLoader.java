@@ -25,12 +25,12 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     ReviewService reviewService;
 
-    @Autowired
-    RestaurantRepository restaurantRepository;
-    @Autowired
-    UserRepository userRepository;
-    @Autowired
-    ReviewRepository reviewRepository;
+//    @Autowired
+//    RestaurantRepository restaurantRepository;
+//    @Autowired
+//    UserRepository userRepository;
+//    @Autowired
+//    ReviewRepository reviewRepository;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
@@ -41,13 +41,13 @@ public class DataLoader implements ApplicationRunner {
         User user2 = new User("john2", "John Two", "john2@mail.com");
         userService.saveUser(user2);
 
-        Restaurant restaurant1 = new Restaurant(1,"Nandos","Glasgow");
+        Restaurant restaurant1 = new Restaurant("Nandos","Glasgow");
         restaurantService.saveRestaurant(restaurant1);
 
-        Restaurant restaurant2 = new Restaurant(2,"Dominos","London");
+        Restaurant restaurant2 = new Restaurant("Dominos","London");
         restaurantService.saveRestaurant(restaurant2);
 
-        Restaurant restaurant3 = new Restaurant(3,"PizzaHut","Leeds");
+        Restaurant restaurant3 = new Restaurant("PizzaHut","Leeds");
         restaurantService.saveRestaurant(restaurant3);
 
         Review review1 = new Review(user1,restaurant1,"21/1/2022", Rating.EXCELLENT);
