@@ -37,7 +37,7 @@ public class ReviewService {
 
 //    getReviewByUserId(long) : List<Review>
     public List<Review> getAllReviewsByUserId(long id){
-        return reviewRepository.findByUserId(id);
+        return reviewRepository.findAllByUserId(id);
     }
 
     public Reply processReview(Review review) {
