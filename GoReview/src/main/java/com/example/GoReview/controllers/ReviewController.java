@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -48,9 +49,9 @@ public class ReviewController {
 
 //    check existing restaurant and submit a review
 
-    @PostMapping(value="/{id}")
-    public ResponseEntity<Reply> submitNewReview(@RequestBody Review review){
-        Reply reply = reviewService.checkExistingRestaurant(review);
+    @PostMapping
+    public ResponseEntity<Reply> submitNewReview(@RequestBody Map<String, String> params){
+        Reply reply = reviewService.processReview(params);
         return new ResponseEntity<>(reply, HttpStatus.CREATED);
     }
 

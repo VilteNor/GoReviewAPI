@@ -25,6 +25,9 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     ReviewService reviewService;
 
+    @Autowired
+    ReviewRepository reviewRepository;
+
 //    @Autowired
 //    RestaurantRepository restaurantRepository;
 //    @Autowired
@@ -51,19 +54,19 @@ public class DataLoader implements ApplicationRunner {
         restaurantService.saveRestaurant(restaurant3);
 
         Review review1 = new Review(user1,restaurant1,"21/1/2022", Rating.EXCELLENT);
-        reviewService.processReview(review1);
+        reviewRepository.save(review1);
 
         Review review2 = new Review(user1,restaurant2,"1/10/2022", Rating.AVERAGE);
-        reviewService.processReview(review2);
+        reviewRepository.save(review2);
 
         Review review3 = new Review(user2,restaurant2,"5/12/2022", Rating.GOOD);
-        reviewService.processReview(review3);
+        reviewRepository.save(review3);
 
         Review review4 = new Review(user2,restaurant3,"17/3/2022", Rating.GOOD);
-        reviewService.processReview(review4);
+        reviewRepository.save(review4);
 
         Review review5 = new Review(user2,restaurant1,"6/4/2022", Rating.COMPLETELY_DISSATISFIED);
-        reviewService.processReview(review5);
+        reviewRepository.save(review5);
 
 
     }

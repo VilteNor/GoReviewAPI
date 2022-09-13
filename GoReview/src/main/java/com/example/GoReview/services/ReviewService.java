@@ -1,15 +1,15 @@
 package com.example.GoReview.services;
 
 
-import com.example.GoReview.models.Reply;
-import com.example.GoReview.models.Restaurant;
-import com.example.GoReview.models.Review;
+import com.example.GoReview.models.*;
 import com.example.GoReview.repositories.RestaurantRepository;
 import com.example.GoReview.repositories.ReviewRepository;
+import com.example.GoReview.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -22,6 +22,9 @@ public class ReviewService {
     UserService userService;
     @Autowired
     RestaurantService restaurantService;
+
+    @Autowired
+    UserRepository userRepository;
 
     public ReviewService(){}
 
@@ -40,11 +43,22 @@ public class ReviewService {
         return reviewRepository.findAllByUserId(id);
     }
 
-    public Reply processReview(Review review) {
+    public Reply processReview(Map<String, String> params) {
+        long restaurantId = Long.parseLong(params.get("restaurant_id"));
+        long userId = Long.parseLong(params.get("user_id"));
+        Restaurant restaurant = restaurantRepository.findById(restaurantId).get();
+        User user = userRepository.findById(restaurantId).get();
+        Rating rating = Rating.valueOf(params.get("rating"));
+        Review review = new Review(user,restaurant,params.get("dateOfVisit"),rating);
+        if(!(params.get("message") ==null)){
+            review.setOptionalMessage(params.get("message"));
+        }
         reviewRepository.save(review);
         return new Reply(String.format("Review id %d submitted successfully by user %s!", review.getId(), review.getUser().getUsername()));
     }
 
+
+    /*
     public Reply checkExistingRestaurant (Review review) {
         if(restaurantService.getAllRestaurants().contains(review.getRestaurant())) {
             return processReview(review);
@@ -53,6 +67,10 @@ public class ReviewService {
                     review.getRestaurant().getName()));
         }
     }
+
+     */
+
+
 
     public Reply addNewRestaurant (Restaurant restaurant) {
         restaurantService.saveRestaurant(restaurant);
