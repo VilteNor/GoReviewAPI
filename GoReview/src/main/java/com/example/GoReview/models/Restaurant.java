@@ -29,6 +29,9 @@ import java.util.List;
             this.location = location;
         }
 
+        public Restaurant() {
+        }
+
         public long getId() {
             return id;
         }
