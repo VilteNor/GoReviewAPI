@@ -32,4 +32,16 @@ public class RestaurantService {
         restaurantRepository.save(restaurant);
         return restaurant;
     }
+
+
+    // in restaurant service:
+// getRestaurantByRating(int) : List<Restaurants>
+//    public List<Restaurant> getRestaurantByRating(int rating){
+//        return reviewRepository.findByRating(rating);
+//    }
+
+
+// getRestaurantByFeatures() : List<Restaurant>
+
+
 }

@@ -7,5 +7,5 @@ public enum Diet {
     GLUTEN_FREE,
     DAIRY_FREE,
     NUT_FREE,
-    FISH_FREE
+    FISH_FREE;
 }

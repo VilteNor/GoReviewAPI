@@ -37,15 +37,7 @@ public class ReviewService {
 
 //  submitReview(long) : ResponseEntity<Review>
 
-
-// in restaurant service:
-// getRestaurantByRating(int) : List<Restaurants>
-//    public List<Restaurant> getRestaurantByRating(int rating){
-//        return reviewRepository.findByRating(rating);
-//    }
-
-
-// getRestaurantByFeatures() : List<Restaurant>
+// average rating for a specific restaurant
 
 
 }
