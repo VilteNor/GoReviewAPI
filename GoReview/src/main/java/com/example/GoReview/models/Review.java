@@ -4,15 +4,13 @@ package com.example.GoReview.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity(name="reviews")
 public class Review {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private long id; //int?
+    private long id;
 
     @Column(name="message")
     private String optionalMessage;
@@ -20,7 +18,7 @@ public class Review {
     private String dateOfVisit;
 
     @Column(name="rating")
-    private Rating rating; //enum pending
+    private Rating rating;
 
     @ManyToOne
     @JoinColumn(name = "username")
@@ -39,7 +37,7 @@ public class Review {
         this.user = user;
         this.restaurant = restaurant;
         this.dateOfVisit=dateOfVisit;
-        this.rating=rating;
+        this.rating= rating;
         this.optionalMessage="this review does not contain a message";
 
     }
