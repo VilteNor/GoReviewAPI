@@ -17,5 +17,5 @@ public enum Cuisine {
     EASTERN_EUROPEAN,
     BRAZILIAN,
     OTHER;
-    
+
 }
