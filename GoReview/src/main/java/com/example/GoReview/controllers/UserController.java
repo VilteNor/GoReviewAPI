@@ -48,7 +48,8 @@ public class UserController {
     @PatchMapping(value = "/{id}/email")
     public ResponseEntity<User> updateUserEmail(@PathVariable Long id, @RequestBody Map<String, String> bodyParams) {
         User user = userService.getUserById(id).get();
-        user.setEmail(bodyParams.get("email")); // create updateEmail method in userService
+        //user.setEmail(bodyParams.get("email")); // create updateEmail method in userService
+        userService.updateUserEmail(id, bodyParams.get("email"));
         userService.saveUser(user);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }

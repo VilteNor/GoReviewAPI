@@ -37,9 +37,27 @@ public class UserService {
         }
     }
 
+    public Reply checkExistingUser (User user) {
+          if(!getAllUsers().contains(user)) {
+              return new Reply(String.format("Could not find user %s. Would you like to create a new user?",
+                    user.getUsername()));
+          } else {
+              return new Reply (String.format("User %s already exists.", user.getUsername()));
+          }
+    }
+
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
     }
 
+    public void updateUserEmail (Long id, String email) {
+        User user = userRepository.findById(id).get();
+        user.setEmail(email);
+    }
+
+    public void updateUserFullName (Long id, String fullName) {
+        User user = userRepository.findById(id).get();
+        user.setFullName(fullName);
+    }
 
 }
