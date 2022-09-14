@@ -38,13 +38,18 @@ public class UserController {
         }
     }
 
-
-    // how to make sure it updates the same account and doesn't create a new user?
     @PatchMapping(value = "/{id}/email")
     public ResponseEntity<User> updateUserEmail(@PathVariable Long id, @RequestBody Map<String, String> bodyParams) {
         User user = userService.getUserById(id).get();
-        //user.setEmail(bodyParams.get("email")); // create updateEmail method in userService
         userService.updateUserEmail(id, bodyParams.get("email"));
+        userService.saveUser(user);
+        return new ResponseEntity<>(user, HttpStatus.OK);
+    }
+
+    @PatchMapping(value = "/{id}/fullName")
+    public ResponseEntity<User> updateUserFullName(@PathVariable Long id, @RequestBody Map<String, String> bodyParams) {
+        User user = userService.getUserById(id).get();
+        userService.updateUserFullName(id, bodyParams.get("fullName"));
         userService.saveUser(user);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
