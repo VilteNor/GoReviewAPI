@@ -1,5 +1,6 @@
 package com.example.GoReview.services;
 
+import com.example.GoReview.models.Reply;
 import com.example.GoReview.models.Restaurant;
 import com.example.GoReview.models.Review;
 import com.example.GoReview.repositories.RestaurantRepository;
@@ -32,7 +33,10 @@ public class RestaurantService {
         restaurantRepository.save(restaurant);
         return restaurant;
     }
-
+    public Reply addNewRestaurant (Restaurant restaurant) {
+        saveRestaurant(restaurant);
+        return new Reply(String.format("Restaurant %s was successfully created!", restaurant.getName()));
+    }
 
     // in restaurant service:
 // getRestaurantByRating(int) : List<Restaurants>

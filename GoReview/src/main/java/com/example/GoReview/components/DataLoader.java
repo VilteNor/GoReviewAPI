@@ -8,9 +8,6 @@ import com.example.GoReview.models.User;
 import com.example.GoReview.repositories.RestaurantRepository;
 import com.example.GoReview.repositories.ReviewRepository;
 import com.example.GoReview.repositories.UserRepository;
-import com.example.GoReview.services.RestaurantService;
-import com.example.GoReview.services.ReviewService;
-import com.example.GoReview.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -19,39 +16,29 @@ import org.springframework.stereotype.Component;
 @Component
 public class DataLoader implements ApplicationRunner {
     @Autowired
-    RestaurantService restaurantService;
+    RestaurantRepository restaurantRepository;
     @Autowired
-    UserService userService;
-    @Autowired
-    ReviewService reviewService;
-
+    UserRepository userRepository;
     @Autowired
     ReviewRepository reviewRepository;
-
-//    @Autowired
-//    RestaurantRepository restaurantRepository;
-//    @Autowired
-//    UserRepository userRepository;
-//    @Autowired
-//    ReviewRepository reviewRepository;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
         User user1 = new User("alice1", "Alice One", "alice1@mail.com");
-        userService.saveUser(user1);
+        userRepository.save(user1);
 
         User user2 = new User("john2", "John Two", "john2@mail.com");
-        userService.saveUser(user2);
+        userRepository.save(user2);
 
         Restaurant restaurant1 = new Restaurant("Nandos","Glasgow");
-        restaurantService.saveRestaurant(restaurant1);
+        restaurantRepository.save(restaurant1);
 
         Restaurant restaurant2 = new Restaurant("Dominos","London");
-        restaurantService.saveRestaurant(restaurant2);
+        restaurantRepository.save(restaurant2);
 
         Restaurant restaurant3 = new Restaurant("PizzaHut","Leeds");
-        restaurantService.saveRestaurant(restaurant3);
+        restaurantRepository.save(restaurant3);
 
         Review review1 = new Review(user1,restaurant1,"21/1/2022", Rating.EXCELLENT);
         reviewRepository.save(review1);

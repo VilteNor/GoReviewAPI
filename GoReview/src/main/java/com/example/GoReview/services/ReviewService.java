@@ -18,10 +18,6 @@ public class ReviewService {
     ReviewRepository reviewRepository;
     @Autowired
     RestaurantRepository restaurantRepository;
-    @Autowired
-    UserService userService;
-    @Autowired
-    RestaurantService restaurantService;
 
     @Autowired
     UserRepository userRepository;
@@ -72,10 +68,7 @@ public class ReviewService {
 
 
 
-    public Reply addNewRestaurant (Restaurant restaurant) {
-        restaurantService.saveRestaurant(restaurant);
-        return new Reply(String.format("Restaurant %s was successfully created!", restaurant.getName()));
-    }
+
 
 //  submitReview(long) : ResponseEntity<Review>
 
