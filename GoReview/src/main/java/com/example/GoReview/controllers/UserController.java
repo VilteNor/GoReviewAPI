@@ -37,12 +37,7 @@ public class UserController {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
-
-    @PostMapping
-    public ResponseEntity<Reply> addNewUser(@RequestBody User user) {
-        Reply reply = userService.processUser(user);
-        return new ResponseEntity<>(reply, HttpStatus.CREATED);
-    }
+    
 
     // how to make sure it updates the same account and doesn't create a new user?
     @PatchMapping(value = "/{id}/email")
@@ -53,6 +48,13 @@ public class UserController {
         userService.saveUser(user);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
+
+    @PostMapping
+    public ResponseEntity<Reply> addNewUser(@RequestBody Map<String, String> userParams) {
+        Reply reply = userService.processUser(userParams);
+        return new ResponseEntity<>(reply, HttpStatus.CREATED);
+    }
+
 
     @DeleteMapping(value = "/{id}")
     public ResponseEntity deleteUser(@PathVariable Long id) {

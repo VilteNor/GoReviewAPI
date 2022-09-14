@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -58,6 +59,29 @@ public class UserService {
     public void updateUserFullName (Long id, String fullName) {
         User user = userRepository.findById(id).get();
         user.setFullName(fullName);
+    }
+
+    public Reply processUser(Map<String, String> userParams) {
+        String username = (userParams.get("username"));
+        String fullName = (userParams.get("fullName"));
+        String email = (userParams.get("email"));
+        if (getUserByUsername(username).isPresent()) {
+            return new Reply("This username already exists, please try again.");
+        } else if (getUserByEmail(email).isPresent()) {
+            return new Reply("This email already exists, please try again.");
+        } else {
+            User user = new User(username, fullName, email);
+            saveUser(user);
+            return new Reply("User created successfully!");
+        }
+    }
+
+    public Optional<User> getUserByUsername(String username) {
+        return userRepository.findByUsername(username);
+    }
+
+    public Optional<User> getUserByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 
 }
