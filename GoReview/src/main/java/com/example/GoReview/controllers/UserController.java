@@ -37,7 +37,7 @@ public class UserController {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
-    
+
 
     // how to make sure it updates the same account and doesn't create a new user?
     @PatchMapping(value = "/{id}/email")

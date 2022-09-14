@@ -48,6 +48,9 @@ public class ReviewService {
         Review review = new Review(user,restaurant,params.get("dateOfVisit"),rating);
         if(!(params.get("message") ==null)){
             review.setOptionalMessage(params.get("message"));
+        } else if (!(params.get("accessibility") ==null)) {
+            Accessibility accessibility = Accessibility.valueOf(params.get("accessibility"));
+            review.addAccessibility(accessibility);
         }
         reviewRepository.save(review);
         return new Reply(String.format("Review id %d submitted successfully by user %s!", review.getId(), review.getUser().getUsername()));

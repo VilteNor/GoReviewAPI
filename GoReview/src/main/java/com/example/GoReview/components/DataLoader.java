@@ -1,10 +1,7 @@
 package com.example.GoReview.components;
 
 
-import com.example.GoReview.models.Rating;
-import com.example.GoReview.models.Restaurant;
-import com.example.GoReview.models.Review;
-import com.example.GoReview.models.User;
+import com.example.GoReview.models.*;
 import com.example.GoReview.repositories.RestaurantRepository;
 import com.example.GoReview.repositories.ReviewRepository;
 import com.example.GoReview.repositories.UserRepository;
@@ -12,6 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
+
+import java.util.Collections;
+import java.util.List;
 
 @Component
 public class DataLoader implements ApplicationRunner {
@@ -55,6 +55,14 @@ public class DataLoader implements ApplicationRunner {
         Review review5 = new Review(user2,restaurant1,"6/4/2022", Rating.COMPLETELY_DISSATISFIED);
         reviewRepository.save(review5);
 
+        Review review6 = new Review(user2,restaurant3,"09/09/09",Rating.GOOD);
+        review6.setPricing(Pricing.££££);
+        Collections.addAll(review6.getAccessibility()  , Accessibility.ACCESSIBLE_BATHROOMS,Accessibility.ACCESSIBLE_MENU);
+        //review6.addAccessibility(Accessibility.ACCESSIBLE_BATHROOMS);
+        //review6.addAccessibility(Accessibility.ACCESSIBLE_MENU);
+        review6.addDiet(Diet.DAIRY_FREE);
+        review6.addDiet(Diet.NUT_FREE);
+        reviewRepository.save(review6);
 
     }
 }

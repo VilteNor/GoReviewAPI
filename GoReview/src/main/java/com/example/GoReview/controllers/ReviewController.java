@@ -49,10 +49,12 @@ public class ReviewController {
 
 //    check existing restaurant and submit a review
 
+    // request params, rest id and username, and then update process to review to not take map, find user and rest, through process review and the output the review.
     @PostMapping
-    public ResponseEntity<Reply> submitNewReview(@RequestBody Map<String, String> params){
-        Reply reply = reviewService.processReview(params);
-        return new ResponseEntity<>(reply, HttpStatus.CREATED);
+    public ResponseEntity<Reply> submitNewReview(@RequestBody Review review){
+        //Reply reply = reviewService.processReview(params);
+        System.out.println("HELLO");
+        return new ResponseEntity<>(null, HttpStatus.CREATED);
     }
     //    get all reviews by username
     @GetMapping(value="/username/{username}")
