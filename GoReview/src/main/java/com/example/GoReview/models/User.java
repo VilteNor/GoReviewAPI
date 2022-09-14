@@ -13,13 +13,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column
+    @Column(unique = true) // ensuring only unique username is allowed
     private String username;
 
     @Column
     private String fullName;
 
-    @Column
+    @Column(unique = true) // ensuring only unique email is allowed
     private String email;
 
     @OneToMany(mappedBy = "user")
