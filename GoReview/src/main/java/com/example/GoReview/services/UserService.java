@@ -29,7 +29,7 @@ public class UserService {
     }
 
     public Reply processUser(User user) {
-        if(user.getUsername().equals(false) || user.getEmail().equals(false)) {
+        if(getAllUsers().contains(user.getUsername()) || getAllUsers().contains(user.getEmail())) {
             return new Reply("This user already exists, please try again.");
         } else {
             saveUser(user);
