@@ -54,6 +54,18 @@ public class ReviewController {
         Reply reply = reviewService.processReview(params);
         return new ResponseEntity<>(reply, HttpStatus.CREATED);
     }
+    //    get all reviews by username
+    @GetMapping(value="/username/{username}")
+    public ResponseEntity<List<Review>> getAllReviewsByUsername(@PathVariable String username){
+        List<Review> reviews= reviewService.getAllReviewsByUsername(username);
+        return new ResponseEntity<>(reviews, HttpStatus.OK);
+    }
 
+    //    delete a review by ID
+    @DeleteMapping(value = "{id}")
+    public ResponseEntity deleteReviewById(@PathVariable long id){
+        reviewService.deleteReview(id);
+        return new ResponseEntity(null, HttpStatus.NO_CONTENT);
+    }
 
 }

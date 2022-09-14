@@ -68,10 +68,22 @@ public class ReviewService {
 
 
 
+    //    get all reviews by username
+    public List<Review> getAllReviewsByUsername(String username){
+        return reviewRepository.findAllByUserUsername(username);
+    }
+
+//  delete a review by review ID
+
+    public void deleteReview(long id){
+        reviewRepository.deleteById(id);
+    }
 
 
-//  submitReview(long) : ResponseEntity<Review>
 
-// average rating for a specific restaurant
+
+
+
+
 
 }
