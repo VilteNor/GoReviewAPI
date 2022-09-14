@@ -41,21 +41,21 @@ public class RestaurantController {
         return  new ResponseEntity<>(savedRestaurant, HttpStatus.OK);
     }
 
-    /*
 
-    @GetMapping(value = "/{user_id}")
+
+    @GetMapping(value = "/findreviewsforuser/{user_id}")
     public ResponseEntity<Restaurant> getRestaurantsByUserId(@PathVariable long user_id) {
         Optional<Restaurant> restaurant = restaurantService.getRestaurantByUserId(user_id);
         return new ResponseEntity<>(restaurant.get(),HttpStatus.OK);
     }
 
-     */
+
 
     @DeleteMapping(value = "/delete-restaurant/{id}")
     public ResponseEntity deleteRestaurant(@PathVariable long id){
         restaurantService.deleteRestaurant(id);
-        //return new ResponseEntity(null,HttpStatus.NO_CONTENT);
-        return ResponseEntity.ok(id);
+        return new ResponseEntity(null,HttpStatus.NO_CONTENT);
+
     }
 
 

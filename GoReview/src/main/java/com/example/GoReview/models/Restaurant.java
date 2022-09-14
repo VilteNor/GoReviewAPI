@@ -19,9 +19,10 @@ import java.util.List;
         @Column(name = "location")
         private String location;
 
-        @OneToMany(mappedBy = "restaurant")
+        @OneToMany(mappedBy = "restaurant", cascade = CascadeType.REMOVE)
         @JsonIgnoreProperties({"restaurant"})
         List<Review> reviews;
+
 
         public Restaurant( String name, String location) {
 
