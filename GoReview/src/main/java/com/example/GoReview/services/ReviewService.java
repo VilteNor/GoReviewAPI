@@ -47,7 +47,7 @@ public class ReviewService {
         long restaurantId = Long.parseLong(params.get("restaurant_id"));
         long userId = Long.parseLong(params.get("user_id"));
         Restaurant restaurant = restaurantRepository.findById(restaurantId).get();
-        User user = userRepository.findById(restaurantId).get();
+        User user = userRepository.findById(userId).get();
         Rating rating = Rating.valueOf(params.get("rating"));
         Review review = new Review(user,restaurant,params.get("dateOfVisit"),rating);
         if(!(params.get("message") ==null)){
