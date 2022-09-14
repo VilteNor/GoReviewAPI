@@ -22,7 +22,7 @@ public class User {
     @Column(unique = true) // ensuring only unique email is allowed
     private String email;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
     @JsonIgnoreProperties({"user"})
     private List<Review> reviews;
 
