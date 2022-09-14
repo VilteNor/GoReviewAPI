@@ -41,9 +41,9 @@ public class ReviewService {
 
     public Reply processReview(Map<String, String> params) {
         long restaurantId = Long.parseLong(params.get("restaurant_id"));
-        long userId = Long.parseLong(params.get("user_id"));
+        String username = (params.get("username"));
         Restaurant restaurant = restaurantRepository.findById(restaurantId).get();
-        User user = userRepository.findById(userId).get();
+        User user = userRepository.findByUsername(username).get();
         Rating rating = Rating.valueOf(params.get("rating"));
         Review review = new Review(user,restaurant,params.get("dateOfVisit"),rating);
         if(!(params.get("message") ==null)){

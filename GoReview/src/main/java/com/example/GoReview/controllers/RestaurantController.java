@@ -1,6 +1,7 @@
 package com.example.GoReview.controllers;
 
 import com.example.GoReview.models.Restaurant;
+import com.example.GoReview.models.Review;
 import com.example.GoReview.services.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,7 +25,7 @@ public class RestaurantController {
         return new ResponseEntity<>(restaurants, HttpStatus.OK);
     }
 
-    @GetMapping("{id}")
+    @GetMapping(value = "/{id}")
     public ResponseEntity<Restaurant> getRestaurantsById(@PathVariable long id){
         Optional<Restaurant> restaurant = restaurantService.getRestaurantById(id);
         if (restaurant.isPresent()){
@@ -39,4 +40,23 @@ public class RestaurantController {
         Restaurant savedRestaurant = restaurantService.saveRestaurant(restaurant);
         return  new ResponseEntity<>(savedRestaurant, HttpStatus.OK);
     }
+
+    /*
+
+    @GetMapping(value = "/{user_id}")
+    public ResponseEntity<Restaurant> getRestaurantsByUserId(@PathVariable long user_id) {
+        Optional<Restaurant> restaurant = restaurantService.getRestaurantByUserId(user_id);
+        return new ResponseEntity<>(restaurant.get(),HttpStatus.OK);
+    }
+
+     */
+
+    @DeleteMapping(value = "/delete-restaurant/{id}")
+    public ResponseEntity deleteRestaurant(@PathVariable long id){
+        restaurantService.deleteRestaurant(id);
+        //return new ResponseEntity(null,HttpStatus.NO_CONTENT);
+        return ResponseEntity.ok(id);
+    }
+
+
 }
