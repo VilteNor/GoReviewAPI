@@ -57,11 +57,8 @@ public class DataLoader implements ApplicationRunner {
 
         Review review6 = new Review(user2,restaurant3,"09/09/09",Rating.GOOD);
         review6.setPricing(Pricing.££££);
-        Collections.addAll(review6.getAccessibility()  , Accessibility.ACCESSIBLE_BATHROOMS,Accessibility.ACCESSIBLE_MENU);
-        //review6.addAccessibility(Accessibility.ACCESSIBLE_BATHROOMS);
-        //review6.addAccessibility(Accessibility.ACCESSIBLE_MENU);
-        review6.addDiet(Diet.DAIRY_FREE);
-        review6.addDiet(Diet.NUT_FREE);
+        Collections.addAll(review6.getAccessibility(), Accessibility.ACCESSIBLE_BATHROOMS,Accessibility.ACCESSIBLE_MENU);
+        Collections.addAll(review6.getDiet(), Diet.DAIRY_FREE, Diet.NUT_FREE);
         reviewRepository.save(review6);
 
     }

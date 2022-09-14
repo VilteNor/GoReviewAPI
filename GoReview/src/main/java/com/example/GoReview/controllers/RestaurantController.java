@@ -1,5 +1,6 @@
 package com.example.GoReview.controllers;
 
+import com.example.GoReview.models.Reply;
 import com.example.GoReview.models.Restaurant;
 import com.example.GoReview.models.Review;
 import com.example.GoReview.services.RestaurantService;
@@ -9,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -36,11 +38,16 @@ public class RestaurantController {
     }
 
     @PostMapping
-    public ResponseEntity<Restaurant> addNewRestaurant(@RequestBody Restaurant restaurant){
-        Restaurant savedRestaurant = restaurantService.saveRestaurant(restaurant);
-        return  new ResponseEntity<>(savedRestaurant, HttpStatus.OK);
+    public ResponseEntity<Reply> addNewRestaurant(@RequestBody Restaurant restaurant){
+        Reply reply = restaurantService.addNewRestaurant(restaurant);
+        return new ResponseEntity<>(reply, HttpStatus.OK);
     }
 
+//    @PostMapping
+//    public ResponseEntity<Reply> addNewUser(@RequestBody Map<String, String> userParams) {
+//        Reply reply = userService.processUser(userParams);
+//        return new ResponseEntity<>(reply, HttpStatus.CREATED);
+//    }
 
 
     @GetMapping(value = "/findreviewsforuser/{user_id}")

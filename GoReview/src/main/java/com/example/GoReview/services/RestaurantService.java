@@ -29,10 +29,15 @@ public class RestaurantService {
         return restaurantRepository.findById(id);
     }
 
-    public Restaurant saveRestaurant(Restaurant restaurant){
+//    public Restaurant saveRestaurant(Restaurant restaurant){
+//        restaurantRepository.save(restaurant);
+//        return restaurant;
+//    }
+
+    public void saveRestaurant(Restaurant restaurant){
         restaurantRepository.save(restaurant);
-        return restaurant;
     }
+
     public Reply addNewRestaurant (Restaurant restaurant) {
         saveRestaurant(restaurant);
         return new Reply(String.format("Restaurant %s was successfully created!", restaurant.getName()));

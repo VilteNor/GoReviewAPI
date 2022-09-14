@@ -39,23 +39,6 @@ public class ReviewService {
         return reviewRepository.findAllByUserId(id);
     }
 
-//    public Reply processReview(Map<String, String> params) {
-//        long restaurantId = Long.parseLong(params.get("restaurant_id"));
-//        String username = (params.get("username"));
-//        Restaurant restaurant = restaurantRepository.findById(restaurantId).get();
-//        User user = userRepository.findByUsername(username).get();
-//        Rating rating = Rating.valueOf(params.get("rating"));
-//        Review review = new Review(user,restaurant,params.get("dateOfVisit"),rating);
-//        if(!(params.get("message") ==null)){
-//            review.setOptionalMessage(params.get("message"));
-//        } else if (!(params.get("accessibility") ==null)) {
-//            Accessibility accessibility = Accessibility.valueOf(params.get("accessibility"));
-//            review.addAccessibility(accessibility);
-//        }
-//        reviewRepository.save(review);
-//        return new Reply(String.format("Review id %d submitted successfully by user %s!", review.getId(), review.getUser().getUsername()));
-//    }
-
     public Reply processReview(Review review, String username, Long restaurantId) {
         User user = userRepository.findByUsername(username).get();
         Restaurant restaurant = restaurantRepository.findById(restaurantId).get();

@@ -19,15 +19,18 @@ import java.util.List;
         @Column(name = "location")
         private String location;
 
+        @Column(name="cuisine")
+        private Cuisine cuisine;
+
         @OneToMany(mappedBy = "restaurant", cascade = CascadeType.REMOVE)
         @JsonIgnoreProperties({"restaurant"})
         List<Review> reviews;
 
 
         public Restaurant( String name, String location) {
-
             this.name = name;
             this.location = location;
+            this.cuisine = null;
         }
 
         public Restaurant() {
@@ -65,6 +68,12 @@ import java.util.List;
             this.reviews = reviews;
         }
 
+        public Cuisine getCuisine() {
+            return cuisine;
+        }
 
+        public void setCuisine(Cuisine cuisine) {
+            this.cuisine = cuisine;
+        }
     }
 
