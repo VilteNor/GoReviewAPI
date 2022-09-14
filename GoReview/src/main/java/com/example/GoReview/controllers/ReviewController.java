@@ -54,8 +54,7 @@ public class ReviewController {
     public ResponseEntity<Reply> submitNewReview(@RequestBody Review review, @RequestParam String username, @RequestParam Long restaurantId){
 
         Reply reply = reviewService.processReview(review, username, restaurantId);
-        System.out.println("HELLO");
-        return new ResponseEntity<>(null, HttpStatus.CREATED);
+        return new ResponseEntity<>(reply, HttpStatus.CREATED);
     }
     //    get all reviews by username
     @GetMapping(value="/username/{username}")
