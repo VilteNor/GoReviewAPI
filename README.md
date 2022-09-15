@@ -33,18 +33,24 @@ In the review the user can create a new restaurant if the restaurant is not alre
 
 The API was created using Java, and Spring boot, as well as, using Postman for testing.
 
-## Table of contents 
+## Table of Contents 
 _______________________________
--
--
+- [Instructions for Initial Setup](https://github.com/VilteNor/GoReviewAPI#step-by-step-instructions-for-initial-setup)
+- [UML and ERD Diagrams](https://github.com/VilteNor/GoReviewAPI#uml-and-erd-diagrams)
+- [Minimum Viable Product (MVP)](https://github.com/VilteNor/GoReviewAPI#minimum-viable-product-mvp)
+- [Extensions](https://github.com/VilteNor/GoReviewAPI#extensions)
+- [Plain Old Java Objects (POJOs)](https://github.com/VilteNor/GoReviewAPI#plain-old-java-objects-pojos)
+- [HTTP Requests](https://github.com/VilteNor/GoReviewAPI#http-requests)
 
-## Step-By-Step instructions for initial setup 
+## Step-By-Step Instructions for Initial Setup 
 _______________________________
 
 1. Make sure that you have installed Java.
 2. Clone this repository : git clone git@github.com:VilteNor/GoReviewAPI.git and open in you Java IDE
 3. If you don't already have it, download Postman so that you can interact with the API, the HTTP quereis you will make will be on : localhost:8081/(command inserted here)
 
+## UML and ERD Diagrams: 
+_______________________________
 
 ## Minimum Viable Product (MVP): 
 _______________________________
@@ -54,7 +60,7 @@ For our MVP we wanted to create an app with CRUD funtionality with 3x classes:
 - Restaurants 
 - Reviews
 
-## Extentions: 
+## Extensions: 
 _______________________________
 
 for our extentions we wanted to add the following functionality 
@@ -65,14 +71,14 @@ for our extentions we wanted to add the following functionality
 - retrieve a list of restaurants by using an inputted enum. 
 - retrieve a list of reviews by using an inputted enum. 
 
-## Plain Old Java Objects (POJOS): 
+## Plain Old Java Objects (POJOs): 
 _______________________________
 
 | pojo 	| type 	| input structure 	|
 |---	|---	|---	|
-| Users 	| -Id: long<br>- username: String<br>- fullName: String<br>- email: String<br>- reviews: list<Review> 	| {  <br>   "username": "veron02",  <br>   "fullname": "veron sundaram"<br>   "email":"veron@gmail.com"<br>} 	|
-| Restaurants 	| - Id: long<br>- name: String<br>- location : String <br>- reviews : list<Review> 	| {  <br>    "name": "pizza express",<br>    "location": "new york"<br>} 	|
-| reviews 	| - Id: long<br>- restaurant : Restaurant <br>- optionalMessage : String<br>- username: User<br>- enums......<br>- dateOfVisit : String 	| { <br>     "dateOfVisit":"09/08/89",<br>     "rating" : "COMPLETELY_DISSATISFIED",<br>     "accessibility":<br>            ["ACCESSIBLE_MENU",<br>            "ACCESSIBLE_BATHROOMS",<br>            "CHILD_FRIENDLY"],<br>     "optionalMessage":"food was amazing "<br>    <br>} 	|
+| User 	| -Id: long<br>- username: String<br>- fullName: String<br>- email: String<br>- reviews: list<Review> 	| {  <br>   "username": "veron02",  <br>   "fullname": "veron sundaram"<br>   "email":"veron@gmail.com"<br>} 	|
+| Restaurant 	| - Id: long<br>- name: String<br>- location : String <br>- reviews : list<Review> 	| {  <br>    "name": "pizza express",<br>    "location": "new york"<br>} 	|
+| Review 	| - Id: long<br>- restaurant : Restaurant <br>- optionalMessage : String<br>- username: User<br>- enums......<br>- dateOfVisit : String 	| { <br>     "dateOfVisit":"09/08/89",<br>     "rating" : "COMPLETELY_DISSATISFIED",<br>     "accessibility":<br>            ["ACCESSIBLE_MENU",<br>            "ACCESSIBLE_BATHROOMS",<br>            "CHILD_FRIENDLY"],<br>     "optionalMessage":"food was amazing "<br>} 	|
 
 
 ## HTTP Requests: 
@@ -158,4 +164,31 @@ To get all restaurants and their associated reviews by a specific cuisine enum v
 | **GET**      | localhost:8080/reviews/rating                                              | Get all reviews by rating               |
 | **DELETE**   | localhost:8080/reviews/{id}                                                | Delete a review                         |
 
-- provide a list of elements available for each enum
+**@POST requests**
+
+To add a new review via a <mark style="background-color: lightblue">POST</mark> request in Postman, use JSON raw format and the following notations (including optional enums for diet, accessibility and pricing):
+
+```
+{
+    "dateOfVisit":"6/4/2022",
+    "rating": "GOOD",
+    "optionalMessage": "would come back again :)",
+    "diet" : [
+        "DAIRY_FREE",
+        "NUT_FREE"
+    ],
+    "accessibility" : [
+        "ACCESSIBLE_BATHROOMS",
+        "ACCESSIBLE_MENU"
+    ],
+    "pricing" : "£££"
+}
+```
+**@GET requests**
+
+To get all reviews by a specific diet, accessibility, pricing or rating enum via a <mark style="background-color: lightblue">GET</mark> request in Postman, use JSON raw format and the following notation: 
+
+```
+"GOOD"
+```
+
