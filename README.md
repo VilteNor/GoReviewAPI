@@ -1,13 +1,80 @@
-# GoReview API 
+# READ ME (GoReviewAPI )
 
-## Table of Contents:
-* 
-* 
-* 
+GoReview is a restaurant review website API, which will help you make up your mind before you eat.
 
-## Using the API
 
-### POJOs (Plain Old Java Objects)
+## Who we are 
+__________________________________________
+
+We are the team behind Go Review 
+
+- Veron 
+    - Github :
+    - Linkedin :
+
+- Migle 
+    - Github :
+    - Linkedin :
+
+- Vilte 
+    - Github :
+    - Linkedin :
+
+## Project Overview 
+________________________
+
+This collaborative project was completed as part of the Bright Network Technology Academy programme. This project aimed to build a back end for a restaurant review website, it consisted of a User who would log on to the website, and then place a review on one of their favourite restaurants. 
+
+In the review the user can create a new restaurant if the restaurant is not already in the database, other functionality included in the review section are:
+- the user can also give a rating out of 5
+- give a rating of the price of the restaurant 
+- an optional message 
+- can attach lables to the review including, different types of accesible features and  diet 
+
+The API was created using Java, and Spring boot, as well as, using Postman for testing.
+
+## Table of contents 
+_______________________________
+-
+-
+
+## Step-By-Step instructions for initial setup 
+_______________________________
+
+1. Make sure that you have installed Java.
+2. Clone this repository : git clone git@github.com:VilteNor/GoReviewAPI.git and open in you Java IDE
+3. If you don't already have it, download Postman so that you can interact with the API, the HTTP quereis you will make will be on : localhost:8081/(command inserted here)
+
+
+## Minimum Viable Product (MVP): 
+_______________________________
+
+For our MVP we wanted to create an app with CRUD funtionality with 3x classes:
+- Users
+- Restaurants 
+- Reviews
+
+## extentions: 
+_______________________________
+
+for our extentions we wanted to add the following functionality 
+
+- get the average rating for each restaurant 
+- create a moderator class, where when the user does complete a review it will enter the pending section, and be reviewed by the moderator 
+- dont let a user write a review to the same restaurant for atleast 7 days
+- retrieve a list of restaurants by using an inputted enum. 
+- retrieve a list of reviews by using an inputted enum. 
+
+## Plain Old Java Objects (POJOS): 
+_______________________________
+
+| POJO        | Type        | Input Structure |
+| ----------- | ----------- | --------------- |
+| Users       | - | --------------- |
+| Restaurants | ----------- | --------------- |
+| Reviews     | ----------- | --------------- |
+
+
 
 
 
