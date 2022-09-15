@@ -48,11 +48,11 @@ public class RestaurantController {
 //    }
 
 
-    @GetMapping(value = "/findreviewsforuser/{user_id}")
-    public ResponseEntity<Restaurant> getRestaurantsByUserId(@PathVariable long user_id) {
-        Optional<Restaurant> restaurant = restaurantService.getRestaurantByUserId(user_id);
-        return new ResponseEntity<>(restaurant.get(),HttpStatus.OK);
-    }
+//    @GetMapping(value = "/users/{user_id}")
+//    public ResponseEntity<List<Restaurant>> getRestaurantsByUserId(@PathVariable long user_id) {
+//        List<Restaurant> restaurants = restaurantService.getRestaurantsByUserId(user_id);
+//        return new ResponseEntity<>(restaurants,HttpStatus.OK);
+//    }
 
     @DeleteMapping(value = "/delete-restaurant/{id}")
     public ResponseEntity deleteRestaurant(@PathVariable long id){

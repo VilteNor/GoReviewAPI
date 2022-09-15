@@ -41,9 +41,9 @@ public class RestaurantService {
         return new Reply(String.format("Restaurant %s was successfully created!", restaurant.getName()));
     }
 
-    public Optional<Restaurant> getRestaurantByUserId(Long user_id){
-        return restaurantRepository.findById(user_id);
-    }
+//    public List<Restaurant> getRestaurantsByUserId(Long user_id){
+//        return restaurantRepository.findByUserId(user_id);
+//    }
 
 
     public void deleteRestaurant(Long id){

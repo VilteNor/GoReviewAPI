@@ -23,4 +23,5 @@ public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
     @Query("SELECT r FROM restaurants r WHERE cuisine=?1")
     List<Restaurant> findByCuisine(Cuisine cuisine);
 
+//    List<Restaurant> findByUserId(long user_id);
 }
