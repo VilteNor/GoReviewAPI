@@ -63,6 +63,15 @@ public class ReviewService {
         return reviewRepository.findAllByUserUsername(username);
     }
 
+    //    get all reviews by restaurant id
+    public List<Review> getAllReviewsByRestaurantId(long id){
+        return reviewRepository.findAllByRestaurantId(id);
+    }
+
+//    get restaurant average rating
+
+    
+
     public List<Review> getAllReviewsByDiet(Diet diet){
         return reviewRepository.findByDiet(diet);
     }

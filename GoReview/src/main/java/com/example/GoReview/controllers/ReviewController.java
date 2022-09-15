@@ -62,6 +62,13 @@ public class ReviewController {
         return new ResponseEntity<>(reviews, HttpStatus.OK);
     }
 
+    //    get all reviews by username
+    @GetMapping(value="/restaurant/{id}")
+    public ResponseEntity<List<Review>> getAllReviewsByRestaurantId(@PathVariable long id){
+        List<Review> reviews= reviewService.getAllReviewsByRestaurantId(id);
+        return new ResponseEntity<>(reviews, HttpStatus.OK);
+    }
+
     @GetMapping(value="/diet")
     public ResponseEntity<List<Review>> getAllReviewsByDiet(@RequestBody Diet diet){
         List<Review> reviews= reviewService.getAllReviewsByDiet(diet);
