@@ -68,11 +68,12 @@ for our extentions we wanted to add the following functionality
 ## Plain Old Java Objects (POJOS): 
 _______________________________
 
-| pojo 	| type 	| input structure 	|  	|  	|
-|---	|---	|---	|---	|---	|
-| Users 	| -Id: long<br>- username: String<br>- fullName: String<br>- email: String<br>- reviews: list<Review> 	| {  <br>   "username": "veron02",  <br>   "fullname": "veron sundaram"<br>   "email":"veron@gmail.com"<br>} 	|  	|  	|
-| Restaurants 	| - Id: long<br>- name: String<br>- location : String <br>- reviews : list<Review> 	| {  <br>    "name": "pizza express",<br>    "location": "new york"<br>} 	|  	|  	|
-| reviews 	| - Id: long<br>- restaurant : Restaurant <br>- optionalMessage : String<br>- username: User<br>- enums......<br>- dateOfVisit : String 	| { <br>     "dateOfVisit":"09/08/89",<br>     "rating" : "COMPLETELY_DISSATISFIED",<br>     "accessibility":<br>            ["ACCESSIBLE_MENU",<br>            "ACCESSIBLE_BATHROOMS",<br>            "CHILD_FRIENDLY"],<br>     "optionalMessage":"food was amazing "<br>    <br>} 	|  	|  	|
+| pojo 	| type 	| input structure 	|
+|---	|---	|---	|
+| Users 	| -Id: long<br>- username: String<br>- fullName: String<br>- email: String<br>- reviews: list<Review> 	| {  <br>   "username": "veron02",  <br>   "fullname": "veron sundaram"<br>   "email":"veron@gmail.com"<br>} 	|
+| Restaurants 	| - Id: long<br>- name: String<br>- location : String <br>- reviews : list<Review> 	| {  <br>    "name": "pizza express",<br>    "location": "new york"<br>} 	|
+| reviews 	| - Id: long<br>- restaurant : Restaurant <br>- optionalMessage : String<br>- username: User<br>- enums......<br>- dateOfVisit : String 	| { <br>     "dateOfVisit":"09/08/89",<br>     "rating" : "COMPLETELY_DISSATISFIED",<br>     "accessibility":<br>            ["ACCESSIBLE_MENU",<br>            "ACCESSIBLE_BATHROOMS",<br>            "CHILD_FRIENDLY"],<br>     "optionalMessage":"food was amazing "<br>    <br>} 	|
+
 
 
 
