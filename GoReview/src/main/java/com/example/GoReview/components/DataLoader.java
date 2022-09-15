@@ -41,7 +41,7 @@ public class DataLoader implements ApplicationRunner {
         restaurant3.setCuisine(Cuisine.ITALIAN);
         restaurantRepository.save(restaurant3);
 
-        Review review1 = new Review(user1,restaurant1,"21/1/2022", Rating.EXCELLENT);
+        Review review1 = new Review(user1,restaurant1,"21/1/2022", Rating.GOOD);
         reviewRepository.save(review1);
 
         Review review2 = new Review(user1,restaurant2,"1/10/2022", Rating.AVERAGE);

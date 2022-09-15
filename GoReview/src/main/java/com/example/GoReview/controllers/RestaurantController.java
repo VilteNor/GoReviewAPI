@@ -2,6 +2,7 @@ package com.example.GoReview.controllers;
 
 import com.example.GoReview.models.*;
 import com.example.GoReview.services.RestaurantService;
+import com.example.GoReview.services.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +18,8 @@ public class RestaurantController {
 
     @Autowired
     RestaurantService restaurantService;
-
+    @Autowired
+    ReviewService reviewService;
 
     @GetMapping
     public ResponseEntity<List<Restaurant>> getAllRestaurants(){
@@ -66,6 +68,15 @@ public class RestaurantController {
         List<Restaurant> restaurants = restaurantService.getAllRestaurantsByCuisine(cuisine);
         return new ResponseEntity<>(restaurants, HttpStatus.OK);
     }
+
+    @GetMapping(value="/rating/{id}")
+    public ResponseEntity<Reply> getAverageRestaurantRating(@PathVariable long id){
+        Reply reply = reviewService.getAverageRestaurantRating(id);
+        return new ResponseEntity<>(reply, HttpStatus.OK);
+    }
+
+
+
 
     /*
     @GetMapping(value="/diet")

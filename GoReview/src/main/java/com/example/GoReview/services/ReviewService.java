@@ -8,6 +8,7 @@ import com.example.GoReview.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -69,8 +70,16 @@ public class ReviewService {
     }
 
 //    get restaurant average rating
+    public Reply getAverageRestaurantRating(long id){
+        List<Review> reviews= getAllReviewsByRestaurantId(id);
+        float rating=0;
+        for (Review review:reviews){
+            rating+=review.getRating().getValue();
+        }
+        float averageRating=rating/reviews.size();
+        return new Reply(String.format("The average rating for this restaurant is %.2f out of 5!", averageRating));
+    }
 
-    
 
     public List<Review> getAllReviewsByDiet(Diet diet){
         return reviewRepository.findByDiet(diet);
