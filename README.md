@@ -68,11 +68,11 @@ for our extentions we wanted to add the following functionality
 ## Plain Old Java Objects (POJOS): 
 _______________________________
 
-| POJO        | Type        | Input Structure |
-| ----------- | ----------- | --------------- |
-| Users       | - | --------------- |
-| Restaurants | ----------- | --------------- |
-| Reviews     | ----------- | --------------- |
+| pojo 	| type 	| input structure 	|  	|  	|
+|---	|---	|---	|---	|---	|
+| Users 	| -Id: long<br>- username: String<br>- fullName: String<br>- email: String<br>- reviews: list<Review> 	| { "username": "veron02",  <br>  "fullname": "veron sundaram"<br>   "email":"veron@gmail.com"<br>, 	|  	|  	|
+| Restaurants 	| - Id: long<br>- name: String<br>- location : String <br>- reviews : list<Review> 	|  	|  	|  	|
+| reviews 	| - Id: long<br>- restaurant : Restaurant <br>- optionalMessage : String<br>- username: User<br>- enums......<br>- dateOfVisit : String 	|  	|  	|  	|
 
 
 
