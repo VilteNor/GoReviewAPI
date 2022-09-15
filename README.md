@@ -17,13 +17,12 @@
 
 | Request Type |             Request Path             |        Description       |
 |--------------|--------------------------------------|--------------------------|
-| POST         | ==localhost:8080/users==             | Add a new user           |  
-| GET          | localhost:8080/users                 | Get all users            |
-| GET          | localhost:8080/users/{id}            | Get user by id           |
-| PATCH        | localhost:8080/users/{id}/email      | Update user's email      |
-| PATCH        | localhost:8080/users/{id}/fullName   | Update user's full name  |
-| DELETE       | localhost:8080/users/{id}            | Delete a user            |
-
+| **POST**     | localhost:8080/users                 | Add a new user           |  
+| **GET**      | localhost:8080/users                 | Get all users            |
+| **GET**      | localhost:8080/users/{id}            | Get user by id           |
+| **PATCH**    | localhost:8080/users/{id}/email      | Update user's email      |
+| **PATCH**    | localhost:8080/users/{id}/fullName   | Update user's full name  |
+| **DELETE**   | localhost:8080/users/{id}            | Delete a user            |
 
 add code block from postman for post requests & patch requests (in raw JSON)
 - POST new user
