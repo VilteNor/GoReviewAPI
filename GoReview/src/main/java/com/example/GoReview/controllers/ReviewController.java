@@ -1,6 +1,7 @@
 package com.example.GoReview.controllers;
 
 
+import com.example.GoReview.models.Diet;
 import com.example.GoReview.models.Reply;
 import com.example.GoReview.models.Review;
 import com.example.GoReview.services.ReviewService;
@@ -60,6 +61,12 @@ public class ReviewController {
     @GetMapping(value="/username/{username}")
     public ResponseEntity<List<Review>> getAllReviewsByUsername(@PathVariable String username){
         List<Review> reviews= reviewService.getAllReviewsByUsername(username);
+        return new ResponseEntity<>(reviews, HttpStatus.OK);
+    }
+
+    @GetMapping(value="/diet")
+    public ResponseEntity<List<Review>> getAllReviewsByDiet(@RequestBody Diet diet){
+        List<Review> reviews= reviewService.getAllReviewsByDiet(diet);
         return new ResponseEntity<>(reviews, HttpStatus.OK);
     }
 

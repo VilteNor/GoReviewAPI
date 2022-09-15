@@ -1,5 +1,6 @@
 package com.example.GoReview.controllers;
 
+import com.example.GoReview.models.Diet;
 import com.example.GoReview.models.Reply;
 import com.example.GoReview.models.Restaurant;
 import com.example.GoReview.models.Review;
@@ -64,6 +65,18 @@ public class RestaurantController {
         return new ResponseEntity(null,HttpStatus.NO_CONTENT);
 
     }
+
+    /*
+
+    @GetMapping(value="/diet")
+    public ResponseEntity findrestaurantsByDiet(@RequestBody Diet diet){
+        List<Restaurant> restaurants = restaurantService.getAllRestaurantsByDiet(diet);
+        return new ResponseEntity(restaurants,HttpStatus.OK);
+    }
+
+     */
+
+
 
 
 }

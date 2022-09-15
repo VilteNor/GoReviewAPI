@@ -1,5 +1,6 @@
 package com.example.GoReview.services;
 
+import com.example.GoReview.models.Diet;
 import com.example.GoReview.models.Reply;
 import com.example.GoReview.models.Restaurant;
 import com.example.GoReview.models.Review;
@@ -47,16 +48,17 @@ public class RestaurantService {
         return restaurantRepository.findById(user_id);
     }
 
+
     public void deleteRestaurant(Long id){
         restaurantRepository.deleteById(id);
     }
 
-
-
-
-
-
-
+    /*
+    public List<Restaurant> getAllRestaurantsByDiet(Diet diet) {
+        return restaurantRepository.getRestaurantsByDiet(diet.ordinal());
+    }
+    
+     */
 
 
     // in restaurant service:

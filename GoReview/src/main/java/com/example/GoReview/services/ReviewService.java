@@ -75,6 +75,10 @@ public class ReviewService {
         return reviewRepository.findAllByUserUsername(username);
     }
 
+    public List<Review> getAllReviewsByDiet(Diet diet){
+        return reviewRepository.findByDiet(diet);
+    }
+
 //  delete a review by review ID
 
     public void deleteReview(long id){
