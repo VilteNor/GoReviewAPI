@@ -13,8 +13,8 @@ We are the team behind Go Review
     - Linkedin :
 
 - Migle 
-    - Github :
-    - Linkedin :
+    - Github : https://github.com/migleambr
+    - Linkedin : https://www.linkedin.com/in/migle-ambrazeviciute-41133917b/  
 
 - Vilte 
     - Github :
@@ -54,7 +54,7 @@ For our MVP we wanted to create an app with CRUD funtionality with 3x classes:
 - Restaurants 
 - Reviews
 
-## extentions: 
+## Extentions: 
 _______________________________
 
 for our extentions we wanted to add the following functionality 
@@ -75,10 +75,8 @@ _______________________________
 | reviews 	| - Id: long<br>- restaurant : Restaurant <br>- optionalMessage : String<br>- username: User<br>- enums......<br>- dateOfVisit : String 	| { <br>     "dateOfVisit":"09/08/89",<br>     "rating" : "COMPLETELY_DISSATISFIED",<br>     "accessibility":<br>            ["ACCESSIBLE_MENU",<br>            "ACCESSIBLE_BATHROOMS",<br>            "CHILD_FRIENDLY"],<br>     "optionalMessage":"food was amazing "<br>    <br>} 	|
 
 
-
-
-
-### HTTP Requests
+## HTTP Requests: 
+_______________________________
 
 ### User:
 
@@ -91,11 +89,28 @@ _______________________________
 | **PATCH**    | localhost:8080/users/{id}/fullName   | Update user's full name  |
 | **DELETE**   | localhost:8080/users/{id}            | Delete a user            |
 
-add code block from postman for post requests & patch requests (in raw JSON)
-- POST new user
-- PATCH email
+**@POST requests**
 
-## Restaurant:
+To add a new user via a <mark style="background-color: lightblue">POST</mark> request, use JSON raw format and the following notations:
+
+```
+{
+    "username" : "migle_ambr",
+    "fullName" : "Migle Ambrazeviciute,
+    "email" : "migle@gmail.com"
+}
+```
+**@PATCH requests**
+
+To update the user's details (either email or full name) via a <mark style="background-color: lightblue">PATCH</mark> request, use JSON raw format and the following notations:
+
+```
+{
+    "email" : "migle_new_email@gmail.com"
+}
+```
+
+### Restaurant:
 
 | Request Type |               Request Path              |              Description             |
 |--------------|-----------------------------------------|--------------------------------------|
@@ -110,7 +125,7 @@ add code block from postman for post & get requests (in raw JSON)
 - POST new restaurant
 - GET restaurant by enum
 
-## Review:
+### Review:
 
 | Request Type |                               Request Path                                 |              Description                |
 |--------------|----------------------------------------------------------------------------|-----------------------------------------|
