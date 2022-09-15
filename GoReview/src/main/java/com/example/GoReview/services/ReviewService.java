@@ -40,12 +40,20 @@ public class ReviewService {
     }
 
     public Reply processReview(Review review, String username, Long restaurantId) {
-        User user = userRepository.findByUsername(username).get();
-        Restaurant restaurant = restaurantRepository.findById(restaurantId).get();
-        review.setUser(user);
-        review.setRestaurant(restaurant);
-        reviewRepository.save(review);
-        return new Reply(String.format("Review id %d submitted successfully by user %s!", review.getId(), review.getUser().getUsername()));
+        if (!userRepository.findByUsername(username).isPresent() && !restaurantRepository.findById(restaurantId).isPresent()) {
+            return new Reply(String.format("Could not find user %s and restaurant id %d. Please create a new user and add a new restaurant to our database.", username, restaurantId));
+        } else if (!userRepository.findByUsername(username).isPresent()) {
+            return new Reply(String.format("Could not find user %s. Please create a new user.", username));
+        } else if (!restaurantRepository.findById(restaurantId).isPresent()) {
+            return new Reply(String.format("Could not find restaurant id %d. Please add a new restaurant to our database.", restaurantId));
+        } else {
+            User user = userRepository.findByUsername(username).get();
+            Restaurant restaurant = restaurantRepository.findById(restaurantId).get();
+            review.setUser(user);
+            review.setRestaurant(restaurant);
+            reviewRepository.save(review);
+            return new Reply(String.format("Review id %d submitted successfully by user %s!", review.getId(), review.getUser().getUsername()));
+        }
     }
 
     /*
