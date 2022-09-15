@@ -56,18 +56,6 @@ public class ReviewService {
         }
     }
 
-    /*
-    public Reply checkExistingRestaurant (Review review) {
-        if(restaurantService.getAllRestaurants().contains(review.getRestaurant())) {
-            return processReview(review);
-        } else {
-            return new Reply(String.format("Could not find restaurant %s. Would you like to add this restaurant to the list?",
-                    review.getRestaurant().getName()));
-        }
-    }
-
-     */
-
 
 
     //    get all reviews by username
@@ -86,10 +74,16 @@ public class ReviewService {
     }
 
 
+// get all reviews by pricing
+    public List<Review> getAllReviewsByPricing(Pricing pricing){
+        return reviewRepository.findByPricing(pricing);
+    }
 
 
-
-
+    // get all reviews by rating
+    public List<Review> getAllReviewsByRating(Rating rating){
+        return reviewRepository.findByRating(rating);
+    }
 
 
 }

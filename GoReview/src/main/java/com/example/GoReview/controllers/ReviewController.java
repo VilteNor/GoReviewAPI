@@ -1,9 +1,7 @@
 package com.example.GoReview.controllers;
 
 
-import com.example.GoReview.models.Diet;
-import com.example.GoReview.models.Reply;
-import com.example.GoReview.models.Review;
+import com.example.GoReview.models.*;
 import com.example.GoReview.services.ReviewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -75,6 +73,20 @@ public class ReviewController {
     public ResponseEntity deleteReviewById(@PathVariable long id){
         reviewService.deleteReview(id);
         return new ResponseEntity(null, HttpStatus.NO_CONTENT);
+    }
+
+//  get all reviews by pricing
+    @GetMapping(value="/pricing")
+    public ResponseEntity<List<Review>> getReviewsByPricing(@RequestBody Pricing pricing){
+        List<Review> reviews= reviewService.getAllReviewsByPricing(pricing);
+        return new ResponseEntity<>(reviews, HttpStatus.OK);
+    }
+
+    //  get all reviews by rating
+    @GetMapping(value="/rating")
+    public ResponseEntity<List<Review>> getReviewsByRating(@RequestBody Rating rating){
+        List<Review> reviews= reviewService.getAllReviewsByRating(rating);
+        return new ResponseEntity<>(reviews, HttpStatus.OK);
     }
 
 }

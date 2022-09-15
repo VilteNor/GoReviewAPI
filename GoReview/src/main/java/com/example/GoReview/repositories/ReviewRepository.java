@@ -1,6 +1,8 @@
 package com.example.GoReview.repositories;
 
 import com.example.GoReview.models.Diet;
+import com.example.GoReview.models.Pricing;
+import com.example.GoReview.models.Rating;
 import com.example.GoReview.models.Review;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -24,18 +26,15 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
     @Query("SELECT r FROM reviews r JOIN r.diets d WHERE d=?1")
     List<Review> findByDiet(Diet diet);
 
+    @Query("SELECT r FROM reviews r WHERE pricing=?1")
+    List<Review> findByPricing(Pricing pricing);
 
-    /*
-    @Query(
-            "SELECT g FROM games g " // from now on, will use g to refer to the games table
-                    + "WHERE g.complete = TRUE "
-                    + "AND (:word IS NULL OR g.word = :word) "
-                    + "AND (:guesses IS NULL OR g.guesses < :guesses)" // Strings into an SQL query
-    )
-    List<Game> findByMultiOptionalParams(@Param("word") String word, @Param("guesses") Integer guesses); // injecting Strings into an SQL query - "" should match
+    @Query("SELECT r FROM reviews r WHERE rating=?1")
+    List<Review> findByRating(Rating rating);
 
 
-     */
+
+
 }
 
 
