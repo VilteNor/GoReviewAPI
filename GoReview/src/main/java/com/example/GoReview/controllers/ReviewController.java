@@ -68,6 +68,12 @@ public class ReviewController {
         return new ResponseEntity<>(reviews, HttpStatus.OK);
     }
 
+    @GetMapping(value="/accessibility")
+    public ResponseEntity<List<Review>> getAllReviewsByDiet(@RequestBody Accessibility accessibility){
+        List<Review> reviews= reviewService.getAllReviewsByAccessibility(accessibility);
+        return new ResponseEntity<>(reviews, HttpStatus.OK);
+    }
+
     //    delete a review by ID
     @DeleteMapping(value = "{id}")
     public ResponseEntity deleteReviewById(@PathVariable long id){

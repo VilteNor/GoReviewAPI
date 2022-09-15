@@ -67,6 +67,10 @@ public class ReviewService {
         return reviewRepository.findByDiet(diet);
     }
 
+    public List<Review> getAllReviewsByAccessibility(Accessibility accessibility){
+        return reviewRepository.findByAAccessibility(accessibility);
+    }
+
 //  delete a review by review ID
 
     public void deleteReview(long id){
