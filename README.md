@@ -30,20 +30,14 @@ add code block from postman for post requests & patch requests (in raw JSON)
 
 **Restaurant**
 
-Request Type |               Request Path              |             Description    
--------------+-----------------------------------------+------------------------------------
-POST         | localhost:8080/restaurants              | Add a new restaurant
--------------+-----------------------------------------+------------------------------------
-GET          | localhost:8080/restaurants              | Get all restaurants  
--------------+-----------------------------------------+------------------------------------
-GET          | localhost:8080/restaurants/{id}         | Get restaurant by id
--------------+-----------------------------------------+------------------------------------
-GET          | localhost:8080/restaurants/cuisine      | Get all restaurants by cuisine
--------------+-----------------------------------------+------------------------------------
-GET          | localhost:8080/restaurants/rating/{id}  | Get average rating for a restaurant
--------------+-----------------------------------------+------------------------------------
-DELETE       | localhost:8080/restaurants/{id}         | Delete a restaurant
-
+| Request Type |               Request Path              |              Description             |
+|--------------|-----------------------------------------|--------------------------------------|
+| **POST**     | localhost:8080/restaurants              | Add a new restaurant                 |
+| **GET**      | localhost:8080/restaurants              | Get all restaurants                  |
+| **GET**      | localhost:8080/restaurants/{id}         | Get restaurant by id                 |
+| **GET**      | localhost:8080/restaurants/cuisine      | Get all restaurants by cuisine       |
+| **GET**      | localhost:8080/restaurants/rating/{id}  | Get average rating for a restaurant  |
+| **DELETE**   | localhost:8080/restaurants/{id}         | Delete a restaurant                  | 
 
 add code block from postman for post & get requests (in raw JSON)
 - POST new restaurant
