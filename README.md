@@ -91,7 +91,7 @@ _______________________________
 
 **@POST requests**
 
-To add a new user via a <mark style="background-color: lightblue">POST</mark> request, use JSON raw format and the following notations:
+To add a new user via a <mark style="background-color: lightblue">POST</mark> request in Postman, use JSON raw format and the following notations:
 
 ```
 {
@@ -100,9 +100,10 @@ To add a new user via a <mark style="background-color: lightblue">POST</mark> re
     "email" : "migle@gmail.com"
 }
 ```
+
 **@PATCH requests**
 
-To update the user's details (either email or full name) via a <mark style="background-color: lightblue">PATCH</mark> request, use JSON raw format and the following notations:
+To update the user's details (either email or full name) via a <mark style="background-color: lightblue">PATCH</mark> request in Postman,, use JSON raw format and the following notations:
 
 ```
 {
@@ -121,9 +122,25 @@ To update the user's details (either email or full name) via a <mark style="back
 | **GET**      | localhost:8080/restaurants/rating/{id}  | Get average rating for a restaurant  |
 | **DELETE**   | localhost:8080/restaurants/{id}         | Delete a restaurant                  | 
 
-add code block from postman for post & get requests (in raw JSON)
-- POST new restaurant
-- GET restaurant by enum
+**@POST requests**
+
+To add a new restaurant via a <mark style="background-color: lightblue">POST</mark> request in Postman, use JSON raw format and the following notations (including an optional enum for cuisine):
+
+```
+{
+    "name" : "Zizzi",
+    "location" : "London",
+    "cuisine" : "ITALIAN"
+}
+```
+
+**@GET requests**
+
+To get all restaurants and their associated reviews by a specific cuisine enum via a <mark style="background-color: lightblue">GET</mark> request in Postman, use JSON raw format and the following notation: 
+
+```
+"ITALIAN"
+```
 
 ### Review:
 
