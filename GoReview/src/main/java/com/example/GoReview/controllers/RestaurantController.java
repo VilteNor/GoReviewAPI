@@ -1,9 +1,6 @@
 package com.example.GoReview.controllers;
 
-import com.example.GoReview.models.Diet;
-import com.example.GoReview.models.Reply;
-import com.example.GoReview.models.Restaurant;
-import com.example.GoReview.models.Review;
+import com.example.GoReview.models.*;
 import com.example.GoReview.services.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -57,13 +54,24 @@ public class RestaurantController {
         return new ResponseEntity<>(restaurant.get(),HttpStatus.OK);
     }
 
-
-
     @DeleteMapping(value = "/delete-restaurant/{id}")
     public ResponseEntity deleteRestaurant(@PathVariable long id){
         restaurantService.deleteRestaurant(id);
         return new ResponseEntity(null,HttpStatus.NO_CONTENT);
 
+    }
+
+    @GetMapping(value="/cuisine")
+    public ResponseEntity<List<Restaurant>> getAllRestaurantsByCuisine(@RequestBody Cuisine cuisine){
+        List<Restaurant> restaurants = restaurantService.getAllRestaurantsByCuisine(cuisine);
+        return new ResponseEntity<>(restaurants, HttpStatus.OK);
+    }
+
+    /*
+    @GetMapping(value="/diet")
+    public ResponseEntity<List<Review>> getAllReviewsByDiet(@RequestBody Diet diet){
+        List<Review> reviews= reviewService.getAllReviewsByDiet(diet);
+        return new ResponseEntity<>(reviews, HttpStatus.OK);
     }
 
     /*

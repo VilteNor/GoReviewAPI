@@ -38,6 +38,7 @@ public class DataLoader implements ApplicationRunner {
         restaurantRepository.save(restaurant2);
 
         Restaurant restaurant3 = new Restaurant("PizzaHut","Leeds");
+        restaurant3.setCuisine(Cuisine.ITALIAN);
         restaurantRepository.save(restaurant3);
 
         Review review1 = new Review(user1,restaurant1,"21/1/2022", Rating.EXCELLENT);

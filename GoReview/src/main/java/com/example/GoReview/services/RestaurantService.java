@@ -1,9 +1,6 @@
 package com.example.GoReview.services;
 
-import com.example.GoReview.models.Diet;
-import com.example.GoReview.models.Reply;
-import com.example.GoReview.models.Restaurant;
-import com.example.GoReview.models.Review;
+import com.example.GoReview.models.*;
 import com.example.GoReview.repositories.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,6 +48,10 @@ public class RestaurantService {
 
     public void deleteRestaurant(Long id){
         restaurantRepository.deleteById(id);
+    }
+
+    public List<Restaurant> getAllRestaurantsByCuisine(Cuisine cuisine){
+        return restaurantRepository.findByCuisine(cuisine);
     }
 
     /*
