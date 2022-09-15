@@ -28,7 +28,7 @@ add code block from postman for post requests & patch requests (in raw JSON)
 - POST new user
 - PATCH email
 
-**Restaurant**
+## Restaurant:
 
 | Request Type |               Request Path              |              Description             |
 |--------------|-----------------------------------------|--------------------------------------|
@@ -43,30 +43,20 @@ add code block from postman for post & get requests (in raw JSON)
 - POST new restaurant
 - GET restaurant by enum
 
-**Review**
+## Review:
 
-Request Type |                               Request Path                                 |              Description    
--------------+----------------------------------------------------------------------------+--------------------------------------
-POST         | localhost:8080/reviews?username={username}&restaurantId={restaurantId}     | Submit a new review
--------------+----------------------------------------------------------------------------+---------------------------------------
-GET          | localhost:8080/reviews                                                     | Get all reviews  
--------------+----------------------------------------------------------------------------+---------------------------------------
-GET          | localhost:8080/reviews/{id}                                                | Get review by id
--------------+----------------------------------------------------------------------------+---------------------------------------
-GET          | localhost:8080/reviews/users/{id}                                          | Get all reviews submited by a user
--------------+----------------------------------------------------------------------------+---------------------------------------
-GET          | localhost:8080/reviews/username/{username}                                 | Get all reviews by username
--------------+----------------------------------------------------------------------------+---------------------------------------
-GET          | localhost:8080/reviews/restaurant/{id}                                     | Get all reviews by restaurant id
--------------+----------------------------------------------------------------------------+---------------------------------------
-GET          | localhost:8080/reviews/diet                                                | Get all reviews by diet type
--------------+----------------------------------------------------------------------------+---------------------------------------
-GET          | localhost:8080/reviews/accessibility                                       | Get all reviews by accessibility type
--------------+----------------------------------------------------------------------------+---------------------------------------
-GET          | localhost:8080/reviews/pricing                                             | Get all reviews by pricing
--------------+----------------------------------------------------------------------------+---------------------------------------
-GET          | localhost:8080/reviews/rating                                              | Get all reviews by rating
--------------+----------------------------------------------------------------------------+---------------------------------------
-DELETE       | localhost:8080/reviews/{id}                                                | Delete a review
+| Request Type |                               Request Path                                 |              Description                |
+|--------------|----------------------------------------------------------------------------|-----------------------------------------|
+| **POST**     | localhost:8080/reviews?username={username}&restaurantId={restaurantId}     | Submit a new review                     |
+| **GET**      | localhost:8080/reviews                                                     | Get all reviews                         |
+| **GET**      | localhost:8080/reviews/{id}                                                | Get review by id                        |  
+| **GET**      | localhost:8080/reviews/users/{id}                                          | Get all reviews submited by a user      |
+| **GET**      | localhost:8080/reviews/username/{username}                                 | Get all reviews by username             | 
+| **GET**      | localhost:8080/reviews/restaurant/{id}                                     | Get all reviews by restaurant id        |  
+| **GET**      | localhost:8080/reviews/diet                                                | Get all reviews by diet type            |
+| **GET**      | localhost:8080/reviews/accessibility                                       | Get all reviews by accessibility type   |
+| **GET**      | localhost:8080/reviews/pricing                                             | Get all reviews by pricing              |
+| **GET**      | localhost:8080/reviews/rating                                              | Get all reviews by rating               |
+| **DELETE**   | localhost:8080/reviews/{id}                                                | Delete a review                         |
 
 - provide a list of elements available for each enum
