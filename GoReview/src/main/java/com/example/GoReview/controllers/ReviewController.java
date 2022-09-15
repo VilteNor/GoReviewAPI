@@ -69,10 +69,6 @@ public class ReviewController {
         return new ResponseEntity<>(reviews, HttpStatus.OK);
     }
 
-
-
-
-
     @GetMapping(value="/diet")
     public ResponseEntity<List<Review>> getAllReviewsByDiet(@RequestBody Diet diet){
         List<Review> reviews= reviewService.getAllReviewsByDiet(diet);
@@ -80,13 +76,13 @@ public class ReviewController {
     }
 
     @GetMapping(value="/accessibility")
-    public ResponseEntity<List<Review>> getAllReviewsByDiet(@RequestBody Accessibility accessibility){
+    public ResponseEntity<List<Review>> getAllReviewsByAccessibility(@RequestBody Accessibility accessibility){
         List<Review> reviews= reviewService.getAllReviewsByAccessibility(accessibility);
         return new ResponseEntity<>(reviews, HttpStatus.OK);
     }
 
     //    delete a review by ID
-    @DeleteMapping(value = "{id}")
+    @DeleteMapping(value = "/{id}")
     public ResponseEntity deleteReviewById(@PathVariable long id){
         reviewService.deleteReview(id);
         return new ResponseEntity(null, HttpStatus.NO_CONTENT);
