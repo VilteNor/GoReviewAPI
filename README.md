@@ -1,6 +1,6 @@
-# READ ME (GoReviewAPI )
+# READ ME (GoReviewAPI 🍕)
 
-GoReview is a restaurant review website API, which will help you make up your mind before you eat.
+GoReview is a restaurant review website API, which will help you make up your mind before you eat 😋
 
 
 ## Who we are 
@@ -8,15 +8,15 @@ __________________________________________
 
 We are the team behind Go Review 
 
-- Veron 
+- Veron 🥗
     - Github :
     - Linkedin :
 
-- Migle 
+- Migle 🧁
     - Github : https://github.com/migleambr
     - Linkedin : https://www.linkedin.com/in/migle-ambrazeviciute-41133917b/  
 
-- Vilte 
+- Vilte 🥯
     - Github :
     - Linkedin :
 
