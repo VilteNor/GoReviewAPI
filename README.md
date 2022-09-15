@@ -17,7 +17,7 @@
 
 | Request Type |             Request Path             |        Description       |
 |--------------|--------------------------------------|--------------------------|
-| POST         | localhost:8080/users                 | Add a new user           |  
+| POST         | ==localhost:8080/users==             | Add a new user           |  
 | GET          | localhost:8080/users                 | Get all users            |
 | GET          | localhost:8080/users/{id}            | Get user by id           |
 | PATCH        | localhost:8080/users/{id}/email      | Update user's email      |
