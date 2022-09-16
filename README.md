@@ -23,7 +23,7 @@ We are the team behind Go Review
 ## Project Overview 
 ________________________
 
-This collaborative project was completed as part of the Bright Network Technology Academy programme. This project aimed to build a back end for a restaurant review website, it consisted of a User who would log on to the website, and then place a review on one of their favourite restaurants. 
+This collaborative project was completed as part of the Bright Network Technology Academy programme. This project aimed to build a back end for a restaurant review website, it consisted of a User who would log on to the website, and then place a review on one of their most recently visited restaurants. 
 
 In the review the user can create a new restaurant if the restaurant is not already in the database, other functionality included in the review section are:
 - the user can also give a rating out of 5
@@ -192,3 +192,15 @@ To get all reviews by a specific diet, accessibility, pricing or rating enum via
 "GOOD"
 ```
 
+
+
+## Testing: 
+_______________________________
+
+The project was tested through postman. The application created is the HTTP client and many http requests were wriiten as a way to test if the expected reponces were recieved,
+preventing bugs and improving performance.
+
+
+Here is an example of an example test:
+
+<img width="988" alt="Screenshot 2022-09-16 at 10 39 37" src="https://user-images.githubusercontent.com/66369533/190608505-aeba90c4-582d-40c6-8d2d-27f8a0a13ae8.png">
