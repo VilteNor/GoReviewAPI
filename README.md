@@ -204,3 +204,15 @@ preventing bugs and improving performance.
 Here is an example of an example test:
 
 <img width="988" alt="Screenshot 2022-09-16 at 10 39 37" src="https://user-images.githubusercontent.com/66369533/190608505-aeba90c4-582d-40c6-8d2d-27f8a0a13ae8.png">
+
+
+## Final Comments: 
+_______________________________
+
+If we were to add further implementations to the project, we would add:
+-  more of our extentions, but were not able to due to time constraints
+- authentication and security features to our website through spring security
+- some J-unit tests, or have worked in TDD style manner.
+
+
+We would also like to acknoledge the BNTA team, and all the trainers for there amazing support during the program!
