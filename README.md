@@ -16,9 +16,9 @@ We are the team behind Go Review
     - Github : https://github.com/migleambr
     - Linkedin : https://www.linkedin.com/in/migle-ambrazeviciute-41133917b/  
 
-- Vilte 🥯
-    - Github :
-    - Linkedin :
+- Vilte 🍧
+    - Github : https://github.com/VilteNor
+    - Linkedin : https://www.linkedin.com/in/viltenor/
 
 ## Project Overview 
 ________________________
