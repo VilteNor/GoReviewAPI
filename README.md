@@ -8,9 +8,9 @@ __________________________________________
 
 We are the team behind Go Review 
 
-- Veron 🥗
-    - Github :
-    - Linkedin :
+- Veron 🍜
+    - Github : https://github.com/veron-eng
+    - Linkedin : https://www.linkedin.com/in/veron-sundaram/
 
 - Migle 🧁
     - Github : https://github.com/migleambr
@@ -76,10 +76,10 @@ _______________________________
 
 | pojo 	| type 	| input structure 	|
 |---	|---	|---	|
-| User 	| -Id: long<br>- username: String<br>- fullName: String<br>- email: String<br>- reviews: list<Review> 	| {  <br>   "username": "veron02",  <br>   "fullname": "veron sundaram"<br>   "email":"veron@gmail.com"<br>} 	|
-| Restaurant 	| - Id: long<br>- name: String<br>- location : String <br>- reviews : list<Review> 	| {  <br>    "name": "pizza express",<br>    "location": "new york"<br>} 	|
-| Review 	| - Id: long<br>- restaurant : Restaurant <br>- optionalMessage : String<br>- username: User<br>- enums......<br>- dateOfVisit : String 	| { <br>     "dateOfVisit":"09/08/89",<br>     "rating" : "COMPLETELY_DISSATISFIED",<br>     "accessibility":<br>            ["ACCESSIBLE_MENU",<br>            "ACCESSIBLE_BATHROOMS",<br>            "CHILD_FRIENDLY"],<br>     "optionalMessage":"food was amazing "<br>} 	|
-
+| Users 	| -Id: long<br>- username: String<br>- fullName: String<br>- email: String<br>- reviews: list<Review> 	| {  <br>   "username": "veron02",  <br>   "fullname": "veron sundaram"<br>   "email":"veron@gmail.com"<br>} 	|
+| Restaurants 	| - Id: long<br>- name: String<br>- location : String <br>- reviews : list<Review> 	| {  <br>    "name": "pizza express",<br>    "location": "new york"<br>} 	|
+| Reviews 	| - Id: long<br>- restaurant : Restaurant <br>- optionalMessage : String<br>- username: User<br>- dateOfVisit : String<br>- optional enums : accessibility, pricing, cuisine, dietary requirements, rating 	| { <br>     "dateOfVisit":"09/08/89",<br>     "rating" : "COMPLETELY_DISSATISFIED",<br>     "accessibility":<br>            ["ACCESSIBLE_MENU",<br>            "ACCESSIBLE_BATHROOMS",<br>            "CHILD_FRIENDLY"],<br>     "optionalMessage":"food was amazing "<br>    <br>} 	|
+| Reply 	| + message: String 	| N/a 	|
 
 ## HTTP Requests: 
 _______________________________
