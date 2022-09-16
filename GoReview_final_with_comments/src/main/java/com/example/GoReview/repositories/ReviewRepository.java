@@ -9,6 +9,13 @@ import java.util.Optional;
 
 public interface ReviewRepository extends JpaRepository<Review, Long> {
 
+
+
+
+
+    List<Review> findByUserId(long id);
+
+    List<Review> findByRating(int rating);
     List<Review> findAllByUserId(long id);
 
     List<Review> findAllByUserUsername(String username);
@@ -17,7 +24,7 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
     List<Review> findByDiet(Diet diet);
 
     @Query("SELECT r FROM reviews r JOIN r.accessibilities a WHERE a=?1")
-    List<Review> findByAccessibility(Accessibility accessibility);
+    List<Review> findByAAccessibility(Accessibility accessibility);
 
 
     @Query("SELECT r FROM reviews r WHERE pricing=?1")

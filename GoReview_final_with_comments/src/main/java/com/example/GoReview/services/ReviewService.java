@@ -86,7 +86,7 @@ public class ReviewService {
     }
 
     public List<Review> getAllReviewsByAccessibility(Accessibility accessibility){
-        return reviewRepository.findByAccessibility(accessibility);
+        return reviewRepository.findByAAccessibility(accessibility);
     }
 
 //  delete a review by review ID
