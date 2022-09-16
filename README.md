@@ -52,6 +52,9 @@ _______________________________
 ## UML and ERD Diagrams: 
 _______________________________
 
+![GoReviewDiagram](https://user-images.githubusercontent.com/83042977/190619825-7a42cb40-813f-435d-84d7-e7d9965164c6.png)
+
+
 ## Minimum Viable Product (MVP): 
 _______________________________
 
