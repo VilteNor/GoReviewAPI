@@ -1,6 +1,4 @@
 package com.example.GoReview.services;
-
-
 import com.example.GoReview.models.*;
 import com.example.GoReview.repositories.RestaurantRepository;
 import com.example.GoReview.repositories.ReviewRepository;
@@ -8,9 +6,7 @@ import com.example.GoReview.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -34,8 +30,6 @@ public class ReviewService {
         return reviewRepository.findById(id);
     }
 
-
-//    getReviewByUserId(long) : List<Review>
     public List<Review> getAllReviewsByUserId(long id){
         return reviewRepository.findAllByUserId(id);
     }
@@ -58,7 +52,6 @@ public class ReviewService {
     }
 
 
-
     //    get all reviews by username
     public List<Review> getAllReviewsByUsername(String username){
         return reviewRepository.findAllByUserUsername(username);
@@ -72,12 +65,13 @@ public class ReviewService {
 //    get restaurant average rating
     public Reply getAverageRestaurantRating(long id){
         List<Review> reviews= getAllReviewsByRestaurantId(id);
+        String restaurant_name= restaurantRepository.findById(id).get().getName();
         float rating=0;
         for (Review review:reviews){
             rating+=review.getRating().getValue();
         }
         float averageRating=rating/reviews.size();
-        return new Reply(String.format("The average rating for this restaurant is %.2f out of 5!", averageRating));
+        return new Reply(String.format("The average rating for %s restaurant is %.2f out of 5!", restaurant_name, averageRating));
     }
 
 

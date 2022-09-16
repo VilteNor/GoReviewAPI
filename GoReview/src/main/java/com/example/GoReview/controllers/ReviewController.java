@@ -9,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -46,9 +45,6 @@ public class ReviewController {
         return new ResponseEntity<>(reviews, HttpStatus.OK);
     }
 
-//    check existing restaurant and submit a review
-
-    // request params, rest id and username, and then update process to review to not take map, find user and rest, through process review and the output the review.
     @PostMapping
     public ResponseEntity<Reply> submitNewReview(@RequestBody Review review, @RequestParam String username, @RequestParam Long restaurantId){
 

@@ -9,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -43,18 +42,6 @@ public class RestaurantController {
         return new ResponseEntity<>(reply, HttpStatus.OK);
     }
 
-//    @PostMapping
-//    public ResponseEntity<Reply> addNewUser(@RequestBody Map<String, String> userParams) {
-//        Reply reply = userService.processUser(userParams);
-//        return new ResponseEntity<>(reply, HttpStatus.CREATED);
-//    }
-
-
-//    @GetMapping(value = "/users/{user_id}")
-//    public ResponseEntity<List<Restaurant>> getRestaurantsByUserId(@PathVariable long user_id) {
-//        List<Restaurant> restaurants = restaurantService.getRestaurantsByUserId(user_id);
-//        return new ResponseEntity<>(restaurants,HttpStatus.OK);
-//    }
 
     @DeleteMapping(value = "/{id}")
     public ResponseEntity deleteRestaurant(@PathVariable long id){
@@ -74,28 +61,5 @@ public class RestaurantController {
         Reply reply = reviewService.getAverageRestaurantRating(id);
         return new ResponseEntity<>(reply, HttpStatus.OK);
     }
-
-
-
-
-    /*
-    @GetMapping(value="/diet")
-    public ResponseEntity<List<Review>> getAllReviewsByDiet(@RequestBody Diet diet){
-        List<Review> reviews= reviewService.getAllReviewsByDiet(diet);
-        return new ResponseEntity<>(reviews, HttpStatus.OK);
-    }
-
-    /*
-
-    @GetMapping(value="/diet")
-    public ResponseEntity findrestaurantsByDiet(@RequestBody Diet diet){
-        List<Restaurant> restaurants = restaurantService.getAllRestaurantsByDiet(diet);
-        return new ResponseEntity(restaurants,HttpStatus.OK);
-    }
-
-     */
-
-
-
 
 }
