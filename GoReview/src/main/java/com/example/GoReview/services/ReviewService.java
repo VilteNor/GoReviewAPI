@@ -63,15 +63,15 @@ public class ReviewService {
     }
 
 //    get restaurant average rating
-    public Reply getAverageRestaurantRating(long id){
+    public double getAverageRestaurantRating(long id){
         List<Review> reviews= getAllReviewsByRestaurantId(id);
-        String restaurant_name= restaurantRepository.findById(id).get().getName();
-        float rating=0;
+        // String restaurant_name= restaurantRepository.findById(id).get().getName();
+        double rating = 0;
         for (Review review:reviews){
-            rating+=review.getRating().getValue();
+            rating += review.getRating().getValue();
         }
-        float averageRating=rating/reviews.size();
-        return new Reply(String.format("The average rating for %s restaurant is %.2f out of 5!", restaurant_name, averageRating));
+        double averageRating = rating/reviews.size();
+        return averageRating;
     }
 
 

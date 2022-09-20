@@ -9,3 +9,4 @@ public enum Diet {
     NUT_FREE,
     FISH_FREE;
 }
+

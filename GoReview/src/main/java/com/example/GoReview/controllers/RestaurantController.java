@@ -57,9 +57,9 @@ public class RestaurantController {
     }
 
     @GetMapping(value="/rating/{id}")
-    public ResponseEntity<Reply> getAverageRestaurantRating(@PathVariable long id){
-        Reply reply = reviewService.getAverageRestaurantRating(id);
-        return new ResponseEntity<>(reply, HttpStatus.OK);
+    public ResponseEntity getAverageRestaurantRating(@PathVariable long id){
+        double averageRating = reviewService.getAverageRestaurantRating(id);
+        return new ResponseEntity<>(averageRating, HttpStatus.OK);
     }
 
 }
