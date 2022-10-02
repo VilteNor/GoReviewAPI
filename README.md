@@ -4,9 +4,8 @@ GoReview is a restaurant review website API, which will help you make up your mi
 
 
 ## Who we are 
-__________________________________________
 
-We are the team behind Go Review 
+We are the team behind Go Review: 
 
 - Veron 🍜
     - Github : https://github.com/veron-eng
@@ -14,14 +13,13 @@ We are the team behind Go Review
 
 - Migle 🧁
     - Github : https://github.com/migleambr
-    - Linkedin : https://www.linkedin.com/in/migle-ambrazeviciute-41133917b/  
+    - Linkedin : https://www.linkedin.com/in/migle-ambrazeviciute/
 
 - Vilte 🍧
     - Github : https://github.com/VilteNor
     - Linkedin : https://www.linkedin.com/in/viltenor/
 
 ## Project Overview 
-________________________
 
 This collaborative project was completed as part of the Bright Network Technology Academy programme. This project aimed to build a back end for a restaurant review website, it consisted of a User who would log on to the website, and then place a review on one of their most recently visited restaurants. 
 
@@ -34,7 +32,7 @@ In the review the user can create a new restaurant if the restaurant is not alre
 The API was created using Java, and Spring boot, as well as, using Postman for testing.
 
 ## Table of Contents 
-_______________________________
+
 - [Instructions for Initial Setup](https://github.com/VilteNor/GoReviewAPI#step-by-step-instructions-for-initial-setup)
 - [UML and ERD Diagrams](https://github.com/VilteNor/GoReviewAPI#uml-and-erd-diagrams)
 - [Minimum Viable Product (MVP)](https://github.com/VilteNor/GoReviewAPI#minimum-viable-product-mvp)
@@ -43,39 +41,36 @@ _______________________________
 - [HTTP Requests](https://github.com/VilteNor/GoReviewAPI#http-requests)
 
 ## Step-By-Step Instructions for Initial Setup 
-_______________________________
 
 1. Make sure that you have installed Java.
-2. Clone this repository : git clone git@github.com:VilteNor/GoReviewAPI.git and open in you Java IDE
-3. If you don't already have it, download Postman so that you can interact with the API, the HTTP quereis you will make will be on : localhost:8081/(command inserted here)
+2. Clone this repository : `git clone git@github.com:VilteNor/GoReviewAPI.git` and open in you Java IDE
+3. Create a database called `go_review`
+4. If you don't already have it, download Postman so that you can interact with the API, the HTTP queries you will make will be on : `localhost:8081/(command inserted here)`
 
 ## UML and ERD Diagrams: 
-_______________________________
 
 ![GoReviewDiagram](https://user-images.githubusercontent.com/83042977/190619825-7a42cb40-813f-435d-84d7-e7d9965164c6.png)
 
 
 ## Minimum Viable Product (MVP): 
-_______________________________
 
 For our MVP we wanted to create an app with CRUD funtionality with 3x classes:
+
 - Users
 - Restaurants 
 - Reviews
 
 ## Extensions: 
-_______________________________
 
-for our extentions we wanted to add the following functionality 
+For our extentions we wanted to add the following functionality: 
 
-- get the average rating for each restaurant 
-- create a moderator class, where when the user does complete a review it will enter the pending section, and be reviewed by the moderator 
-- dont let a user write a review to the same restaurant for atleast 7 days
+- get the average rating for each restaurant. 
+- create a moderator class, where when the user completes a review it will enter a pending section and be later reviewed by the moderator. 
+- don't let a user write a review to the same restaurant for at least 7 days.
 - retrieve a list of restaurants by using an inputted enum. 
 - retrieve a list of reviews by using an inputted enum. 
 
 ## Plain Old Java Objects (POJOs): 
-_______________________________
 
 | pojo 	| type 	| input structure 	|
 |---	|---	|---	|
@@ -85,22 +80,21 @@ _______________________________
 | Reply 	| + message: String 	| N/a 	|
 
 ## HTTP Requests: 
-_______________________________
 
 ### User:
 
 | Request Type |             Request Path             |        Description       |
 |--------------|--------------------------------------|--------------------------|
-| **POST**     | localhost:8080/users                 | Add a new user           |  
-| **GET**      | localhost:8080/users                 | Get all users            |
-| **GET**      | localhost:8080/users/{id}            | Get user by id           |
-| **PATCH**    | localhost:8080/users/{id}/email      | Update user's email      |
-| **PATCH**    | localhost:8080/users/{id}/fullName   | Update user's full name  |
-| **DELETE**   | localhost:8080/users/{id}            | Delete a user            |
+| **POST**     | `localhost:8080/users`               | Add a new user           |  
+| **GET**      | `localhost:8080/users`               | Get all users            |
+| **GET**      | `localhost:8080/users/{id}`          | Get user by id           |
+| **PATCH**    | `localhost:8080/users/{id}/email`    | Update user's email      |
+| **PATCH**    | `localhost:8080/users/{id}/fullName` | Update user's full name  |
+| **DELETE**   | `localhost:8080/users/{id}`          | Delete a user            |
 
 **@POST requests**
 
-To add a new user via a <mark style="background-color: lightblue">POST</mark> request in Postman, use JSON raw format and the following notations:
+To add a new user via a **POST request** in Postman, use JSON raw format and the following notations:
 
 ```
 {
@@ -112,7 +106,7 @@ To add a new user via a <mark style="background-color: lightblue">POST</mark> re
 
 **@PATCH requests**
 
-To update the user's details (either email or full name) via a <mark style="background-color: lightblue">PATCH</mark> request in Postman,, use JSON raw format and the following notations:
+To update the user's details (either email or full name) via a **PATCH request** in Postman, use JSON raw format and the following notations:
 
 ```
 {
@@ -124,16 +118,16 @@ To update the user's details (either email or full name) via a <mark style="back
 
 | Request Type |               Request Path              |              Description             |
 |--------------|-----------------------------------------|--------------------------------------|
-| **POST**     | localhost:8080/restaurants              | Add a new restaurant                 |
-| **GET**      | localhost:8080/restaurants              | Get all restaurants                  |
-| **GET**      | localhost:8080/restaurants/{id}         | Get restaurant by id                 |
-| **GET**      | localhost:8080/restaurants/cuisine      | Get all restaurants by cuisine       |
-| **GET**      | localhost:8080/restaurants/rating/{id}  | Get average rating for a restaurant  |
-| **DELETE**   | localhost:8080/restaurants/{id}         | Delete a restaurant                  | 
+| **POST**     | `localhost:8080/restaurants`            | Add a new restaurant                 |
+| **GET**      | `localhost:8080/restaurants`            | Get all restaurants                  |
+| **GET**      | `localhost:8080/restaurants/{id}`       | Get restaurant by id                 |
+| **GET**      | `localhost:8080/restaurants/cuisine`    | Get all restaurants by cuisine       |
+| **GET**      | `localhost:8080/restaurants/rating/{id}`| Get average rating for a restaurant  |
+| **DELETE**   | `localhost:8080/restaurants/{id}`       | Delete a restaurant                  | 
 
 **@POST requests**
 
-To add a new restaurant via a <mark style="background-color: lightblue">POST</mark> request in Postman, use JSON raw format and the following notations (including an optional enum for cuisine):
+To add a new restaurant via a **POST request** in Postman, use JSON raw format and the following notations (including an optional enum for cuisine):
 
 ```
 {
@@ -145,7 +139,7 @@ To add a new restaurant via a <mark style="background-color: lightblue">POST</ma
 
 **@GET requests**
 
-To get all restaurants and their associated reviews by a specific cuisine enum via a <mark style="background-color: lightblue">GET</mark> request in Postman, use JSON raw format and the following notation: 
+To get all restaurants and their associated reviews by a specific cuisine enum via a **GET request** in Postman, use JSON raw format and the following notation: 
 
 ```
 "ITALIAN"
@@ -155,21 +149,21 @@ To get all restaurants and their associated reviews by a specific cuisine enum v
 
 | Request Type |                               Request Path                                 |              Description                |
 |--------------|----------------------------------------------------------------------------|-----------------------------------------|
-| **POST**     | localhost:8080/reviews?username={username}&restaurantId={restaurantId}     | Submit a new review                     |
-| **GET**      | localhost:8080/reviews                                                     | Get all reviews                         |
-| **GET**      | localhost:8080/reviews/{id}                                                | Get review by id                        |  
-| **GET**      | localhost:8080/reviews/users/{id}                                          | Get all reviews submited by a user      |
-| **GET**      | localhost:8080/reviews/username/{username}                                 | Get all reviews by username             | 
-| **GET**      | localhost:8080/reviews/restaurant/{id}                                     | Get all reviews by restaurant id        |  
-| **GET**      | localhost:8080/reviews/diet                                                | Get all reviews by diet type            |
-| **GET**      | localhost:8080/reviews/accessibility                                       | Get all reviews by accessibility type   |
-| **GET**      | localhost:8080/reviews/pricing                                             | Get all reviews by pricing              |
-| **GET**      | localhost:8080/reviews/rating                                              | Get all reviews by rating               |
-| **DELETE**   | localhost:8080/reviews/{id}                                                | Delete a review                         |
+| **POST**     | `localhost:8080/reviews?username={username}&restaurantId={restaurantId}`   | Submit a new review                     |
+| **GET**      | `localhost:8080/reviews`                                                   | Get all reviews                         |
+| **GET**      | `localhost:8080/reviews/{id}`                                              | Get review by id                        |  
+| **GET**      | `localhost:8080/reviews/users/{id}`                                        | Get all reviews submited by a user      |
+| **GET**      | `localhost:8080/reviews/username/{username}`                               | Get all reviews by username             | 
+| **GET**      | `localhost:8080/reviews/restaurant/{id}`                                   | Get all reviews by restaurant id        |  
+| **GET**      | `localhost:8080/reviews/diet`                                              | Get all reviews by diet type            |
+| **GET**      | `localhost:8080/reviews/accessibility`                                     | Get all reviews by accessibility type   |
+| **GET**      | `localhost:8080/reviews/pricing`                                           | Get all reviews by pricing              |
+| **GET**      | `localhost:8080/reviews/rating`                                            | Get all reviews by rating               |
+| **DELETE**   | `localhost:8080/reviews/{id}`                                              | Delete a review                         |
 
 **@POST requests**
 
-To add a new review via a <mark style="background-color: lightblue">POST</mark> request in Postman, use JSON raw format and the following notations (including optional enums for diet, accessibility and pricing):
+To add a new review via a **POST request** in Postman, use JSON raw format and the following notations (including optional enums for diet, accessibility and pricing):
 
 ```
 {
@@ -189,16 +183,14 @@ To add a new review via a <mark style="background-color: lightblue">POST</mark> 
 ```
 **@GET requests**
 
-To get all reviews by a specific diet, accessibility, pricing or rating enum via a <mark style="background-color: lightblue">GET</mark> request in Postman, use JSON raw format and the following notation: 
+To get all reviews by a specific diet, accessibility, pricing or rating enum via a **GET request** in Postman, use JSON raw format and the following notation: 
 
 ```
 "GOOD"
 ```
 
 
-
 ## Testing: 
-_______________________________
 
 The project was tested through postman. The application created is the HTTP client and many http requests were wriiten as a way to test if the expected reponces were recieved,
 preventing bugs and improving performance.
@@ -210,12 +202,12 @@ Here is an example of an example test:
 
 
 ## Final Comments: 
-_______________________________
 
 If we were to add further implementations to the project, we would add:
+
 -  more of our extentions, but were not able to due to time constraints
 - authentication and security features to our website through spring security
 - some J-unit tests, or have worked in TDD style manner.
 
 
-We would also like to acknoledge the BNTA team, and all the trainers for there amazing support during the program!
+We would also like to acknowledge the BNTA team, and all the trainers for their amazing support during the program!
